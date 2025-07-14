@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c11us5i5pyvpd"]
+[gd_scene load_steps=7 format=3 uid="uid://c11us5i5pyvpd"]
 
 [ext_resource type="Script" uid="uid://dpmg2hdgndgaa" path="res://ui/ui_manager/ui_manager.gd" id="1_pvxgq"]
 [ext_resource type="Script" uid="uid://dwcmx4ojuqesl" path="res://ui/state_machine/ui_state_machine.gd" id="2_7htoj"]
 [ext_resource type="Script" uid="uid://bn6tbn5fbj2l2" path="res://ui/state_machine/main_menu.gd" id="3_6pdrx"]
+[ext_resource type="PackedScene" uid="uid://cqs812hs3i1e3" path="res://ui/scenes/main_menu_ui/main_menu_ui.tscn" id="4_ci6gg"]
+[ext_resource type="PackedScene" uid="uid://1vt0nyd60qja" path="res://ui/scenes/settings_ui/settings_ui.tscn" id="5_quorr"]
+[ext_resource type="Script" uid="uid://j5s76hdjplgc" path="res://ui/state_machine/settings.gd" id="5_sjpo4"]
 
 [node name="UiManager" type="Node"]
 script = ExtResource("1_pvxgq")
@@ -13,4 +16,13 @@ script = ExtResource("2_7htoj")
 [node name="MainMenu" type="Node" parent="StateMachine"]
 script = ExtResource("3_6pdrx")
 
+[node name="MainMenuUI" parent="StateMachine/MainMenu" instance=ExtResource("4_ci6gg")]
+
 [node name="Settings" type="Node" parent="StateMachine"]
+script = ExtResource("5_sjpo4")
+
+[node name="SettingsUi" parent="StateMachine/Settings" instance=ExtResource("5_quorr")]
+visible = false
+
+[connection signal="settings_pressed" from="StateMachine/MainMenu/MainMenuUI" to="StateMachine/MainMenu" method="_on_main_menu_ui_settings_pressed"]
+[connection signal="back_pressed" from="StateMachine/Settings/SettingsUi" to="StateMachine/Settings" method="_on_settings_ui_back_pressed"]

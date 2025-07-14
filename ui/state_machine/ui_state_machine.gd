@@ -19,7 +19,7 @@ func initialize() -> void:
 		if child is UiState:
 			states[child.name] = child as UiState
 			states[child.name].finished.connect(_change_state)
-			states[child.name].enemy = owner
+			states[child.name].ui_manager = owner
 		else:
 			push_error(child.name + " is not UiState")
 	

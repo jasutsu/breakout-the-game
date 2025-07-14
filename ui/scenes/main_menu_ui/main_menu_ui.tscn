@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqs812hs3i1e3"]
+[gd_scene load_steps=3 format=3 uid="uid://cqs812hs3i1e3"]
+
+[ext_resource type="Script" uid="uid://be83515ssh4y4" path="res://ui/scenes/main_menu_ui/main_menu_ui.gd" id="1_ofk75"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_damat"]
 bg_color = Color(0.196078, 0.196078, 0.196078, 1)
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ofk75")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -57,3 +60,8 @@ text = "Settings"
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

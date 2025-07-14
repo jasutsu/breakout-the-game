@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b46b3fygiesud"]
 
-[ext_resource type="Texture2D" uid="uid://g2o2uqi77ou2" path="res://assets/Brick_Breaker_Assets/Hearts.png" id="1_vqyv7"]
+[ext_resource type="Texture2D" uid="uid://g2o2uqi77ou2" path="res://assets/Brick_Breaker_Assets/Hearts.png" id="1_c7uy1"]
 
 [node name="InGameUi" type="Control"]
 layout_mode = 3
@@ -27,4 +27,4 @@ layout_mode = 2
 
 [node name="Heart" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_vqyv7")
+texture = ExtResource("1_c7uy1")

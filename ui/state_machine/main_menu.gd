@@ -1,10 +1,10 @@
 extends UiState
 
 func enter(prev_state: String = "", data: Dictionary = {}) -> void:
-	#controller.some_function()
-	pass
-
-func update(delta: float) -> void:
-	#if controller.some_condition():
-		#finished.emit(ControllerStateNames.STATE_B)
-	pass
+	$MainMenuUI.visible = true
+	
+func exit() -> void:
+	$MainMenuUI.visible = false
+	
+func _on_main_menu_ui_settings_pressed() -> void:
+	finished.emit(UiStateNames.SETTINGS)

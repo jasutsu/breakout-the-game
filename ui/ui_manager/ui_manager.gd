@@ -1,5 +1,5 @@
 extends Node
 class_name UiManagerClass
 
-func initialize() -> void:
+func _ready() -> void:
 	$StateMachine.initialize()
