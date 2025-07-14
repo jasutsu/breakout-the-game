@@ -4,6 +4,9 @@ class_name UiState
 const UiStateNames = {
 	MAIN_MENU = "MainMenu",
 	SETTINGS = "Settings",
+	SELECT_LEVEL = "SelectLevel",
+	IN_GAME = "InGame",
+	IN_GAME_PAUSE = "InGamePause",
 }
 
 signal finished(new_state_name: String, data: Dictionary)

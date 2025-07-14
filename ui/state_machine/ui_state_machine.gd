@@ -3,6 +3,9 @@ extends Node
 const UiStateNames = {
 	MAIN_MENU = "MainMenu",
 	SETTINGS = "Settings",
+	SELECT_LEVEL = "SelectLevel",
+	IN_GAME = "InGame",
+	IN_GAME_PAUSE = "InGamePause",
 }
 
 @export var initial_state_name: String = UiStateNames.MAIN_MENU

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c11us5i5pyvpd"]
+[gd_scene load_steps=13 format=3 uid="uid://c11us5i5pyvpd"]
 
 [ext_resource type="Script" uid="uid://dpmg2hdgndgaa" path="res://ui/ui_manager/ui_manager.gd" id="1_pvxgq"]
 [ext_resource type="Script" uid="uid://dwcmx4ojuqesl" path="res://ui/state_machine/ui_state_machine.gd" id="2_7htoj"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://cqs812hs3i1e3" path="res://ui/scenes/main_menu_ui/main_menu_ui.tscn" id="4_ci6gg"]
 [ext_resource type="PackedScene" uid="uid://1vt0nyd60qja" path="res://ui/scenes/settings_ui/settings_ui.tscn" id="5_quorr"]
 [ext_resource type="Script" uid="uid://j5s76hdjplgc" path="res://ui/state_machine/settings.gd" id="5_sjpo4"]
+[ext_resource type="Script" uid="uid://b75p1hi8luc2c" path="res://ui/state_machine/select_level.gd" id="7_mv502"]
+[ext_resource type="PackedScene" uid="uid://d0ou0okxw460k" path="res://ui/scenes/select_level_ui/select_level_ui.tscn" id="8_loq1h"]
+[ext_resource type="Script" uid="uid://dci3aku6aifoi" path="res://ui/state_machine/in_game.gd" id="9_7pjdk"]
+[ext_resource type="PackedScene" uid="uid://b46b3fygiesud" path="res://ui/scenes/in_game_ui/in_game_ui.tscn" id="9_loq1h"]
+[ext_resource type="Script" uid="uid://xlhn68icq3bu" path="res://ui/state_machine/in_game_pause.gd" id="11_4xrkm"]
+[ext_resource type="PackedScene" uid="uid://cx1skyiean4ik" path="res://ui/scenes/in_game_pause_ui/in_game_pause_ui.tscn" id="12_5kx56"]
 
 [node name="UiManager" type="Node"]
 script = ExtResource("1_pvxgq")
@@ -24,5 +30,29 @@ script = ExtResource("5_sjpo4")
 [node name="SettingsUi" parent="StateMachine/Settings" instance=ExtResource("5_quorr")]
 visible = false
 
+[node name="SelectLevel" type="Node" parent="StateMachine"]
+script = ExtResource("7_mv502")
+
+[node name="SelectLevelUi" parent="StateMachine/SelectLevel" instance=ExtResource("8_loq1h")]
+visible = false
+
+[node name="InGame" type="Node" parent="StateMachine"]
+script = ExtResource("9_7pjdk")
+
+[node name="InGameUi" parent="StateMachine/InGame" instance=ExtResource("9_loq1h")]
+visible = false
+
+[node name="InGamePause" type="Node" parent="StateMachine"]
+script = ExtResource("11_4xrkm")
+
+[node name="InGamePauseUi" parent="StateMachine/InGamePause" instance=ExtResource("12_5kx56")]
+visible = false
+
+[connection signal="play_pressed" from="StateMachine/MainMenu/MainMenuUI" to="StateMachine/MainMenu" method="_on_main_menu_ui_play_pressed"]
+[connection signal="quit_pressed" from="StateMachine/MainMenu/MainMenuUI" to="StateMachine/MainMenu" method="_on_main_menu_ui_quit_pressed"]
 [connection signal="settings_pressed" from="StateMachine/MainMenu/MainMenuUI" to="StateMachine/MainMenu" method="_on_main_menu_ui_settings_pressed"]
 [connection signal="back_pressed" from="StateMachine/Settings/SettingsUi" to="StateMachine/Settings" method="_on_settings_ui_back_pressed"]
+[connection signal="back_pressed" from="StateMachine/SelectLevel/SelectLevelUi" to="StateMachine/SelectLevel" method="_on_select_level_ui_back_pressed"]
+[connection signal="play_pressed" from="StateMachine/SelectLevel/SelectLevelUi" to="StateMachine/SelectLevel" method="_on_select_level_ui_play_pressed"]
+[connection signal="action_button_pressed" from="StateMachine/InGamePause/InGamePauseUi" to="StateMachine/InGamePause" method="_on_action_button_pressed"]
+[connection signal="go_to_main_menu_pressed" from="StateMachine/InGamePause/InGamePauseUi" to="StateMachine/InGamePause" method="_on_main_menu_pressed"]
