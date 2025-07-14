@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cclxia84cwetu"]
+
+[ext_resource type="Script" uid="uid://d20owr5ebq5xl" path="res://common/State Machine/scripts/controller.gd" id="1_bn41e"]
+[ext_resource type="Script" uid="uid://c38y0b14prlof" path="res://common/State Machine/scripts/state_machine.gd" id="2_yla3g"]
+[ext_resource type="Script" uid="uid://dafc8dlpnv07r" path="res://common/State Machine/scripts/state_a.gd" id="3_cexfd"]
+[ext_resource type="Script" uid="uid://cqi4ka5x0ltli" path="res://common/State Machine/scripts/state_b.gd" id="4_h1ael"]
+
+[node name="Controller" type="Node"]
+script = ExtResource("1_bn41e")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_yla3g")
+
+[node name="State_A" type="Node" parent="StateMachine"]
+script = ExtResource("3_cexfd")
+
+[node name="State_B" type="Node" parent="StateMachine"]
+script = ExtResource("4_h1ael")

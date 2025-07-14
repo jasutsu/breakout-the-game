@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c11us5i5pyvpd"]
+[gd_scene load_steps=4 format=3 uid="uid://c11us5i5pyvpd"]
 
 [ext_resource type="Script" uid="uid://dpmg2hdgndgaa" path="res://ui/ui_manager/ui_manager.gd" id="1_pvxgq"]
+[ext_resource type="Script" uid="uid://dwcmx4ojuqesl" path="res://ui/state_machine/ui_state_machine.gd" id="2_7htoj"]
+[ext_resource type="Script" uid="uid://bn6tbn5fbj2l2" path="res://ui/state_machine/main_menu.gd" id="3_6pdrx"]
 
 [node name="UiManager" type="Node"]
 script = ExtResource("1_pvxgq")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_7htoj")
+
+[node name="MainMenu" type="Node" parent="StateMachine"]
+script = ExtResource("3_6pdrx")
+
+[node name="Settings" type="Node" parent="StateMachine"]
