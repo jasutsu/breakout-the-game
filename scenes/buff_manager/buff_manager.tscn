@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6cpbbuu6anmf"]
+
+[ext_resource type="Script" uid="uid://vibrjcpr808g" path="res://scenes/buff_manager/buff_manager.gd" id="1_hpvxe"]
+
+[node name="BuffManager" type="Node"]
+script = ExtResource("1_hpvxe")
+
+[connection signal="buff_started" from="." to="." method="_on_buff_started"]

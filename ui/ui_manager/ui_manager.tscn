@@ -23,6 +23,7 @@ script = ExtResource("2_7htoj")
 script = ExtResource("3_6pdrx")
 
 [node name="MainMenuUI" parent="StateMachine/MainMenu" instance=ExtResource("4_ci6gg")]
+visible = false
 
 [node name="Settings" type="Node" parent="StateMachine"]
 script = ExtResource("5_sjpo4")

@@ -1,14 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cukxrpvc4hmr0"]
+[gd_scene load_steps=4 format=3 uid="uid://cukxrpvc4hmr0"]
 
 [ext_resource type="Texture2D" uid="uid://d3ff8kybji6es" path="res://assets/art/pixel_art/big_ball.png" id="1_v753p"]
+[ext_resource type="Script" uid="uid://cihpalmd4dm5n" path="res://scenes/bubble/bubble.gd" id="1_wsujy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wsujy"]
 radius = 8.0
 
 [node name="Bubble" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_wsujy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v753p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wsujy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

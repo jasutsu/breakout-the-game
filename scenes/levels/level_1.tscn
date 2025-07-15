@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://5hcrdavemheg"]
+
+[ext_resource type="PackedScene" uid="uid://cp7ui7343gpf8" path="res://scenes/paddle/paddle.tscn" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://cagqy1pk02u3u" path="res://scenes/kill_zone/kill_zone.tscn" id="4_x42e6"]
+[ext_resource type="PackedScene" uid="uid://b6cpbbuu6anmf" path="res://scenes/buff_manager/buff_manager.tscn" id="5_6761a"]
+
+[node name="Level_1" type="Node"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(96, 240)
+
+[node name="KillZone" parent="." instance=ExtResource("4_x42e6")]
+position = Vector2(96, 272)
+
+[node name="BuffManager" parent="." instance=ExtResource("5_6761a")]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(64, 128)

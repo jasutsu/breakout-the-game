@@ -28,6 +28,15 @@ window/size/viewport_height=256
 window/size/mode=2
 window/stretch/mode="canvas_items"
 
+[layer_names]
+
+2d_physics/layer_1="Paddle"
+2d_physics/layer_2="Ball"
+2d_physics/layer_3="Brick"
+2d_physics/layer_4="Bubble"
+2d_physics/layer_5="WorldBoundary"
+2d_physics/layer_6="KillZone"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
