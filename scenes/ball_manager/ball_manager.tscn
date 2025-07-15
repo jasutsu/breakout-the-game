@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://da1wnxf405jde"]
+
+[ext_resource type="Script" uid="uid://by8ds6bnkp5pr" path="res://scenes/ball_manager/ball_manager.gd" id="1_bmvyt"]
+
+[node name="BallManager" type="Node"]
+script = ExtResource("1_bmvyt")

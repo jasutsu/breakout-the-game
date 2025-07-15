@@ -13,4 +13,3 @@ script = ExtResource("1_xo0xc")
 shape = SubResource("WorldBoundaryShape2D_7ot0y")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

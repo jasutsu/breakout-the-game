@@ -4,5 +4,3 @@
 
 [node name="BuffManager" type="Node"]
 script = ExtResource("1_hpvxe")
-
-[connection signal="buff_started" from="." to="." method="_on_buff_started"]

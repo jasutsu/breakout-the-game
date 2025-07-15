@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BrickData" load_steps=2 format=3 uid="uid://bt464baf7kpue"]
+
+[ext_resource type="Script" uid="uid://nbhe2mqgx7cw" path="res://scenes/brick/brick_data.gd" id="1_u4e2i"]
+
+[resource]
+script = ExtResource("1_u4e2i")
+health = 0
+buff = "none"
+wall = true
+metadata/_custom_type_script = "uid://nbhe2mqgx7cw"

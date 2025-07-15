@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 var horizontal_velocity: float = 0.0
 
+signal started_ball(pos: Vector2)
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -32,3 +34,7 @@ func _input(event: InputEvent) -> void:
 		if Input.is_action_pressed("ui_left"):
 			horizontal_dir = -1
 		horizontal_velocity = horizontal_dir * default_input_speed
+	elif Input.is_action_just_pressed("start_ball"):
+		if $BallSpawnPosition.visible:
+			started_ball.emit($BallSpawnPosition.global_position)
+			$BallSpawnPosition.visible = false
