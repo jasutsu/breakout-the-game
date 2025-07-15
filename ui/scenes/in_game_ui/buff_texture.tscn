@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwbcyu2xl73ls"]
+
+[ext_resource type="Texture2D" uid="uid://d3ff8kybji6es" path="res://assets/art/pixel_art/big_ball.png" id="1_sk6iy"]
+
+[node name="BuffTexture" type="TextureRect"]
+texture = ExtResource("1_sk6iy")

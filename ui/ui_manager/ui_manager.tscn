@@ -38,6 +38,7 @@ script = ExtResource("7_mv502")
 visible = false
 
 [node name="InGame" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
 script = ExtResource("9_7pjdk")
 
 [node name="InGameUi" parent="StateMachine/InGame" instance=ExtResource("9_loq1h")]

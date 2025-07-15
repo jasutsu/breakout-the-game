@@ -22,11 +22,19 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 
 [node name="Heart" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(45.51, 11.57)
 layout_mode = 2
 texture = ExtResource("1_c7uy1")
+expand_mode = 1
+
+[node name="BuffContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10

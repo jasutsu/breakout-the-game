@@ -9,6 +9,6 @@ class_name BubbleData
 	"two_paddle"
 	) var name: String
 @export var texture: Texture2D
-@export var speed: float = 1.0
-@export var size: float = 1.0
-@export var duration: float = 1.0
+@export var speed: float
+@export var size: float
+@export var duration: float

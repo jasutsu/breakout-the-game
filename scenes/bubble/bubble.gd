@@ -20,5 +20,6 @@ func _process(delta: float) -> void:
 		position += Vector2.DOWN * bubble_data.speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
+	print(bubble_data.duration)
 	bubble_captured.emit(bubble_data)
 	queue_free()

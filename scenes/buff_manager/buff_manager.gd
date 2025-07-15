@@ -9,7 +9,8 @@ signal buff_finished(bubble_data: BubbleData)
 var timers: Dictionary[BubbleData, SceneTreeTimer] = {}
 
 func _ready() -> void:
-	spawn_bubble(preload("res://scenes/bubble/bubble_types/bubble_big_ball.tres"), $"../Node2D".position)
+	buff_started.connect(UiManager.start_buff)
+	buff_finished.connect(UiManager.finish_buff)
 
 func spawn_bubble(bubble_data: BubbleData, pos: Vector2) -> void:
 	var bubble = bubble_scene.instantiate()
@@ -21,7 +22,7 @@ func spawn_bubble(bubble_data: BubbleData, pos: Vector2) -> void:
 func start_buff(bubble_data: BubbleData) -> void:
 	if timers.has(bubble_data):
 		var time_left: float = timers[bubble_data].time_left
-		timers[bubble_data].wait_time = time_left + bubble_data.duration
+		timers[bubble_data].time_left = time_left + bubble_data.duration
 		return
 		
 	buff_started.emit(bubble_data)

@@ -7,7 +7,7 @@
 script = ExtResource("1_28ml5")
 name = "two_paddle"
 texture = ExtResource("2_wyfpg")
-speed = 1.0
+speed = 120.0
 size = 1.0
-duration = 1.0
+duration = 5.0
 metadata/_custom_type_script = "uid://ljgryamo5o4r"
