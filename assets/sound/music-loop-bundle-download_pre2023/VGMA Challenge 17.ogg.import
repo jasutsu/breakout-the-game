@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d4fudl45cng5t"
+path="res://.godot/imported/VGMA Challenge 17.ogg-c7a26ecc87e6825bb40590ee8111af66.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/music-loop-bundle-download_pre2023/VGMA Challenge 17.ogg"
+dest_files=["res://.godot/imported/VGMA Challenge 17.ogg-c7a26ecc87e6825bb40590ee8111af66.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

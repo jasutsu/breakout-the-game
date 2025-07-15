@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bk3kogbg2hwv6"
+path="res://.godot/imported/Ludum Dare 28 01.ogg-96ed05b78b0f940245411be44aa1a973.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/music-loop-bundle-download_pre2023/Ludum Dare 28 01.ogg"
+dest_files=["res://.godot/imported/Ludum Dare 28 01.ogg-96ed05b78b0f940245411be44aa1a973.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

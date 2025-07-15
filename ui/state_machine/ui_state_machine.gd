@@ -44,6 +44,10 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.physics_update(delta)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if current_state:
+		current_state.check_unhandled_input(event)
+
 func _change_state(new_state_name: String, data: Dictionary = {}):
 	if not states.has(new_state_name):
 		push_error("State " + new_state_name + " does not exist in available states. Transition Cancelled")

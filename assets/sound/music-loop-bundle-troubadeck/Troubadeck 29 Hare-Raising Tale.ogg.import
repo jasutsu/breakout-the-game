@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b4yc8kk7jswwt"
+path="res://.godot/imported/Troubadeck 29 Hare-Raising Tale.ogg-127c5db781adf84f65f1adfca5014ae4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/music-loop-bundle-troubadeck/Troubadeck 29 Hare-Raising Tale.ogg"
+dest_files=["res://.godot/imported/Troubadeck 29 Hare-Raising Tale.ogg-127c5db781adf84f65f1adfca5014ae4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

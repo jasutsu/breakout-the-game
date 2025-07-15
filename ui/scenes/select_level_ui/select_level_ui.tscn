@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0ou0okxw460k"]
+[gd_scene load_steps=6 format=3 uid="uid://d0ou0okxw460k"]
 
-[ext_resource type="Texture2D" uid="uid://d3vldrs72avir" path="res://assets/kenney_cursor-pixel-pack/Tiles/tile_0073.png" id="1_5ge60"]
+[ext_resource type="Texture2D" uid="uid://d3vldrs72avir" path="res://assets/art/kenney_cursor-pixel-pack/Tiles/tile_0073.png" id="1_5ge60"]
 [ext_resource type="Script" uid="uid://bbdhxfley00mx" path="res://ui/scenes/select_level_ui/select_level_ui.gd" id="1_swfqy"]
-[ext_resource type="Texture2D" uid="uid://dgfnq00be3rss" path="res://assets/kenney_cursor-pixel-pack/Tiles/tile_0072.png" id="2_swfqy"]
+[ext_resource type="PackedScene" uid="uid://pha7vukmbxsg" path="res://ui/scenes/game_button/game_button.tscn" id="2_du2x3"]
+[ext_resource type="Texture2D" uid="uid://dgfnq00be3rss" path="res://assets/art/kenney_cursor-pixel-pack/Tiles/tile_0072.png" id="2_swfqy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x1oe"]
 bg_color = Color(0, 0, 0, 0.188235)
@@ -25,15 +26,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2x1oe")
 
-[node name="Back" type="Button" parent="."]
+[node name="GameButton" parent="." instance=ExtResource("2_du2x3")]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 6.0
-offset_right = 28.0
+offset_right = 36.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 6
-text = "Back
-"
+text = "Back"
 
 [node name="LevelNumber" type="Label" parent="."]
 layout_mode = 1
@@ -75,7 +75,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("1_5ge60")
 
-[node name="Play" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="Play" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_du2x3")]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
@@ -86,5 +86,5 @@ layout_mode = 2
 size_flags_horizontal = 10
 texture_normal = ExtResource("2_swfqy")
 
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="button_clicked" from="GameButton" to="." method="_on_back_pressed"]
+[connection signal="button_clicked" from="MarginContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]

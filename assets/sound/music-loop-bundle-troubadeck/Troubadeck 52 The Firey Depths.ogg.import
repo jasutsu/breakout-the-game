@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0ddwv2fohosc"
+path="res://.godot/imported/Troubadeck 52 The Firey Depths.ogg-046bd1655c4f2946663829d49cd3d728.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/music-loop-bundle-troubadeck/Troubadeck 52 The Firey Depths.ogg"
+dest_files=["res://.godot/imported/Troubadeck 52 The Firey Depths.ogg-046bd1655c4f2946663829d49cd3d728.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://pha7vukmbxsg"]
+
+[ext_resource type="Script" uid="uid://dci1vwn74o85m" path="res://ui/scenes/game_button/game_button.gd" id="1_tmfln"]
+
+[node name="GameButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Default"
+script = ExtResource("1_tmfln")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

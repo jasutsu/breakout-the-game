@@ -24,3 +24,6 @@ func update(delta: float) -> void:
 
 func physics_update(delta: float) -> void:
 	pass
+
+func check_unhandled_input(event: InputEvent) -> void:
+	pass

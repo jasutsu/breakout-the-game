@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 UiManager="*res://ui/ui_manager/ui_manager.tscn"
 GameManager="*res://game_manager/game_manager.tscn"
+SoundManager="*res://sound_manager/sound_manager.tscn"
 
 [display]
 
@@ -29,4 +30,5 @@ window/stretch/mode="canvas_items"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 textures/size/mode=0

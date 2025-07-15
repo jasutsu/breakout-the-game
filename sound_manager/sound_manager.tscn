@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cems5hwklwmuf"]
+
+[ext_resource type="Script" uid="uid://b56tnkxtrpbql" path="res://sound_manager/sound_manager.gd" id="1_uiacu"]
+[ext_resource type="AudioStream" uid="uid://b48v3sn0n4ue6" path="res://assets/sound/music-loop-bundle-download_2024_q1/Sketchbook 2024-03-30_02.ogg" id="2_d27h2"]
+[ext_resource type="AudioStream" uid="uid://de806v2sdpqya" path="res://assets/sound/music-loop-bundle-download_pre2023/Patreon Challenge 10_05.ogg" id="3_q8pi2"]
+[ext_resource type="AudioStream" uid="uid://csaj6wnilj1v0" path="res://assets/sound/kenney_interface-sounds/Audio/bong_001.ogg" id="4_sf8vw"]
+[ext_resource type="AudioStream" uid="uid://bjaek7d6ongs8" path="res://assets/sound/kenney_interface-sounds/Audio/click_001.ogg" id="5_e3jic"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_uiacu")
+
+[node name="BackgroundMusic" type="Node" parent="."]
+
+[node name="Peaceful" type="AudioStreamPlayer" parent="BackgroundMusic"]
+stream = ExtResource("2_d27h2")
+
+[node name="Mood" type="AudioStreamPlayer" parent="BackgroundMusic"]
+unique_name_in_owner = true
+stream = ExtResource("3_q8pi2")
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="HoverButton" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource("4_sf8vw")
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource("5_e3jic")

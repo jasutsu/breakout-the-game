@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://1vt0nyd60qja"]
+[gd_scene load_steps=4 format=3 uid="uid://1vt0nyd60qja"]
 
 [ext_resource type="Script" uid="uid://edk1m1fi5q1m" path="res://ui/scenes/settings_ui/settings_ui.gd" id="1_hm8wv"]
+[ext_resource type="PackedScene" uid="uid://pha7vukmbxsg" path="res://ui/scenes/game_button/game_button.tscn" id="2_r7q3j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2us6"]
 bg_color = Color(0.197937, 0.197937, 0.197937, 1)
@@ -92,14 +93,13 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 8
 text = "0.5"
 
-[node name="Back" type="Button" parent="."]
-layout_mode = 1
+[node name="Back" parent="." instance=ExtResource("2_r7q3j")]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 28.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 6
-text = "Back
-"
+text = "Back"
 
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="button_clicked" from="Back" to="." method="_on_back_pressed"]

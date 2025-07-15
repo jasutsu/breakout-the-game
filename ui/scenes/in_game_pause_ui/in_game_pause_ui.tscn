@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx1skyiean4ik"]
+[gd_scene load_steps=5 format=3 uid="uid://cx1skyiean4ik"]
 
 [ext_resource type="Script" uid="uid://cyk5y778ugnhb" path="res://ui/scenes/in_game_pause_ui/in_game_pause_ui.gd" id="1_bsaba"]
+[ext_resource type="PackedScene" uid="uid://pha7vukmbxsg" path="res://ui/scenes/game_button/game_button.tscn" id="2_2f07j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l682d"]
 bg_color = Color(0, 0, 0, 0.388235)
@@ -79,13 +80,13 @@ label_settings = SubResource("LabelSettings_l682d")
 custom_minimum_size = Vector2(0, 21.25)
 layout_mode = 2
 
-[node name="Action" type="Button" parent="VBoxContainer"]
+[node name="Action" parent="VBoxContainer" instance=ExtResource("2_2f07j")]
 layout_mode = 2
 text = "RESUME
 TRY AGAIN
 NEXT LEVEL"
 
-[node name="GoToMainMenu" type="Button" parent="VBoxContainer"]
+[node name="MainMenu" parent="VBoxContainer" instance=ExtResource("2_2f07j")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "Go back to
@@ -94,5 +95,5 @@ Main Menu"
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 
-[connection signal="pressed" from="VBoxContainer/Action" to="." method="_on_action_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/GoToMainMenu" to="." method="_on_go_to_main_menu_pressed"]
+[connection signal="button_clicked" from="VBoxContainer/Action" to="." method="_on_action_button_pressed"]
+[connection signal="button_clicked" from="VBoxContainer/MainMenu" to="." method="_on_go_to_main_menu_pressed"]

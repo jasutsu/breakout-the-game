@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b3xlvvcbd82ca"
+path="res://.godot/imported/Interior Birdecorator Explore_CUTE.ogg-428474bedfc302d4bded7d1e0b20d3cd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/music-loop-bundle-download_2024_q3/Interior Birdecorator Explore_CUTE.ogg"
+dest_files=["res://.godot/imported/Interior Birdecorator Explore_CUTE.ogg-428474bedfc302d4bded7d1e0b20d3cd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

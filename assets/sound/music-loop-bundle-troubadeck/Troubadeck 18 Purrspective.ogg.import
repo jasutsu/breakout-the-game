@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bty8xrpexc025"
+path="res://.godot/imported/Troubadeck 18 Purrspective.ogg-c8640d7c144574463326c88c3c668999.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/music-loop-bundle-troubadeck/Troubadeck 18 Purrspective.ogg"
+dest_files=["res://.godot/imported/Troubadeck 18 Purrspective.ogg-c8640d7c144574463326c88c3c668999.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
