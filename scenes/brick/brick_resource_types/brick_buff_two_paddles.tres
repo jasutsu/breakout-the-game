@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BrickData" load_steps=2 format=3 uid="uid://cetj8lopspn15"]
+
+[ext_resource type="Script" uid="uid://nbhe2mqgx7cw" path="res://scenes/brick/brick_data.gd" id="1_2qeo5"]
+
+[resource]
+script = ExtResource("1_2qeo5")
+health = 1
+buff = "two_paddle"
+wall = false
+metadata/_custom_type_script = "uid://nbhe2mqgx7cw"

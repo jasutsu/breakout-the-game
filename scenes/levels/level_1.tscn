@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://5hcrdavemheg"]
+[gd_scene load_steps=17 format=4 uid="uid://5hcrdavemheg"]
 
 [ext_resource type="PackedScene" uid="uid://cp7ui7343gpf8" path="res://scenes/paddle/paddle.tscn" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://b3n8xovej6ua8" path="res://scenes/brick/brick_scene_types/brick_buff_split_ball.tscn" id="4_oc4kc"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://da1wnxf405jde" path="res://scenes/ball_manager/ball_manager.tscn" id="5_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://cd20lovnjhl1p" path="res://scenes/brick/brick_scene_types/brick_crackable.tscn" id="5_s8va5"]
 [ext_resource type="PackedScene" uid="uid://box5dwrtve8o7" path="res://scenes/brick/brick_scene_types/brick_normal.tscn" id="6_dga24"]
+[ext_resource type="PackedScene" uid="uid://k3ea7t607iys" path="res://scenes/brick/brick_scene_types/brick_buff_big_ball.tscn" id="7_iav0o"]
+[ext_resource type="PackedScene" uid="uid://dubq0dkafxo5s" path="res://scenes/brick/brick_scene_types/brick_buff_fast_ball.tscn" id="8_dnkej"]
+[ext_resource type="PackedScene" uid="uid://dwkfdt7pt7qrv" path="res://scenes/brick/brick_scene_types/brick_buff_fast_paddle.tscn" id="9_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://b4ixvqh0wv138" path="res://scenes/brick/brick_scene_types/brick_buff_two_paddles.tscn" id="10_wtwp4"]
+[ext_resource type="PackedScene" uid="uid://cmslp0sug6kvk" path="res://scenes/brick/brick_scene_types/brick_buff_wall.tscn" id="11_iwr0g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6761a"]
 
@@ -16,6 +21,11 @@
 scenes/1/scene = ExtResource("4_oc4kc")
 scenes/2/scene = ExtResource("5_s8va5")
 scenes/3/scene = ExtResource("6_dga24")
+scenes/4/scene = ExtResource("7_iav0o")
+scenes/5/scene = ExtResource("8_dnkej")
+scenes/6/scene = ExtResource("9_mm8aj")
+scenes/7/scene = ExtResource("10_wtwp4")
+scenes/8/scene = ExtResource("11_iwr0g")
 
 [sub_resource type="TileSet" id="TileSet_x42e6"]
 sources/2 = SubResource("TileSetScenesCollectionSource_qxy0u")
@@ -52,7 +62,7 @@ shape = SubResource("WorldBoundaryShape2D_6761a")
 [node name="BrickManager" type="Node" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="BrickManager"]
-tile_map_data = PackedByteArray(0, 0, 5, 0, 12, 0, 2, 0, 0, 0, 0, 0, 3, 0, 7, 0, 12, 0, 2, 0, 0, 0, 0, 0, 2, 0, 9, 0, 12, 0, 2, 0, 0, 0, 0, 0, 1, 0)
+tile_map_data = PackedByteArray("AAABAAQAAgAAAAAAAwACAAQAAgAAAAAAAQADAAQAAgAAAAAAAwAEAAQAAgAAAAAAAQAFAAQAAgAAAAAAAQAGAAQAAgAAAAAAAQAHAAQAAgAAAAAAAwAIAAQAAgAAAAAAAQAJAAQAAgAAAAAAAQAKAAQAAgAAAAAAAQALAAQAAgAAAAAAAQABAAMAAgAAAAAAAgACAAMAAgAAAAAAAgADAAMAAgAAAAAAAgAEAAMAAgAAAAAAAQAFAAMAAgAAAAAAAgAGAAMAAgAAAAAAAgAHAAMAAgAAAAAAAgAIAAMAAgAAAAAAAgAJAAMAAgAAAAAAAQAKAAMAAgAAAAAAAQADAAEAAgAAAAAACAAIAAEAAgAAAAAACAABAAEAAgAAAAAAAwACAAEAAgAAAAAAAwAEAAEAAgAAAAAAAwAFAAEAAgAAAAAAAQAGAAEAAgAAAAAAAQAHAAEAAgAAAAAAAQAJAAEAAgAAAAAAAwABAAIAAgAAAAAAAgACAAIAAgAAAAAAAgADAAIAAgAAAAAAAgAEAAIAAgAAAAAAAQAFAAIAAgAAAAAAAgAGAAIAAgAAAAAAAgAHAAIAAgAAAAAAAQAIAAIAAgAAAAAAAgAJAAIAAgAAAAAAAQABAAAAAgAAAAAAAgACAAwAAgAAAAAAAQADAAwAAgAAAAAAAQAHAAwAAgAAAAAAAwAIAAwAAgAAAAAAAwAJAAwAAgAAAAAAAwADAAkAAgAAAAAAAwAHAAkAAgAAAAAAAwAIAAoAAgAAAAAAAwAJAAoAAgAAAAAAAwAGAAYAAgAAAAAAAQADAAYAAgAAAAAAAQACAAYAAgAAAAAAAwACAAcAAgAAAAAAAwABAAgAAgAAAAAAAwABAAkAAgAAAAAAAwALAAgAAgAAAAAAAwALAAkAAgAAAAAAAwAMAAkAAgAAAAAAAwAMAAsAAgAAAAAAAwACAAsAAgAAAAAAAQADAAsAAgAAAAAAAQAKAA0AAgAAAAAAAQAKAAoAAgAAAAAAAQAHAAoAAgAAAAAAAQAIAAcAAgAAAAAAAQAEAAYAAgAAAAAAAQAAAAcAAgAAAAAAAQAAAAgAAgAAAAAAAQAAAAkAAgAAAAAAAQADAAUAAgAAAAAAAQAJAAUAAgAAAAAAAQALAAUAAgAAAAAAAQA=")
 tile_set = SubResource("TileSet_x42e6")
 
 [node name="BallManager" parent="." instance=ExtResource("5_oc4kc")]

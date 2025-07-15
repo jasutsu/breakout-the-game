@@ -12,11 +12,10 @@ func _on_buff_manager_buff_started(bubble_data: BubbleData) -> void:
 		var new_balls: Array[Ball] = []
 		for ball in balls:
 			var direction := ball.linear_velocity.normalized()
-			var speed := ball.linear_velocity.length()
 			var ball1 = spawn_ball(ball.position)
-			ball1.linear_velocity = direction.rotated(-PI/4) * speed
+			ball1.update_direction(direction.rotated(-PI/4))
 			var ball2 = spawn_ball(ball.position)
-			ball2.linear_velocity = direction.rotated(PI/4) * speed
+			ball2.update_direction(direction.rotated(PI/4))
 			new_balls.append_array([ball1, ball2])
 			ball.queue_free()
 		balls.clear()
@@ -27,14 +26,11 @@ func _on_buff_manager_buff_finished(bubble_data: BubbleData) -> void:
 		pass
 	elif bubble_data.name == "fast_ball":
 		pass
-	elif bubble_data.name == "split_ball":
-		pass
 
 func spawn_ball(position: Vector2) -> Ball:
-	var ball: Ball = ball_scene.instantiate()
+	var ball: Ball = ball_scene.instantiate() as Ball
 	add_child(ball)
 	ball.position = position
-	ball.linear_velocity = Vector2(1, -1) * 120.0
 	return ball
 #
 #
@@ -64,4 +60,5 @@ func _on_kill_zone_body_entered(body: Node2D) -> void:
 
 func _on_paddle_started_ball(pos: Vector2) -> void:
 	var ball = spawn_ball(pos)
+	ball.update_direction(Vector2(1, -1))
 	balls.append(ball)

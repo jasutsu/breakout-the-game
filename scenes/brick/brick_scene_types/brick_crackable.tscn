@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cd20lovnjhl1p"]
 
-[ext_resource type="Script" uid="uid://cj0ketrndsgei" path="res://scenes/brick.gd" id="1_cy4r3"]
+[ext_resource type="Script" uid="uid://cj0ketrndsgei" path="res://scenes/brick/brick.gd" id="1_cy4r3"]
 [ext_resource type="Texture2D" uid="uid://dwqonroays1gf" path="res://assets/art/Brick_Breaker_Assets/bricks.png" id="2_qemj0"]
 [ext_resource type="Resource" uid="uid://bdjs721x1j182" path="res://scenes/brick/brick_resource_types/brick_crackable.tres" id="2_v27tg"]
 
@@ -12,6 +12,8 @@ collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_cy4r3")
 brick_data = ExtResource("2_v27tg")
+normal_rect = Rect2(224, 0, 16, 16)
+cracked_rect = Rect2(240, 0, 16, 16)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qemj0")

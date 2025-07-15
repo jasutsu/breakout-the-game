@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://vibrjcpr808g" path="res://scenes/buff_manager/buff_manager.gd" id="1_hpvxe"]
 
-[node name="BuffManager" type="Node"]
+[node name="BuffManager" type="Node" groups=["buff_manager"]]
 script = ExtResource("1_hpvxe")

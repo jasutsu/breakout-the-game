@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3n8xovej6ua8"]
 
-[ext_resource type="Script" uid="uid://cj0ketrndsgei" path="res://scenes/brick.gd" id="1_fpgtc"]
+[ext_resource type="Script" uid="uid://cj0ketrndsgei" path="res://scenes/brick/brick.gd" id="1_fpgtc"]
 [ext_resource type="Resource" uid="uid://djd4054dgnxdh" path="res://scenes/brick/brick_resource_types/brick_buff_split_ball.tres" id="2_p6kou"]
 [ext_resource type="Texture2D" uid="uid://dwqonroays1gf" path="res://assets/art/Brick_Breaker_Assets/bricks.png" id="2_vk3ae"]
 

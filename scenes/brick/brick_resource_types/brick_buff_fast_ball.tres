@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BrickData" load_steps=2 format=3 uid="uid://shylkdgv27a8"]
+
+[ext_resource type="Script" uid="uid://nbhe2mqgx7cw" path="res://scenes/brick/brick_data.gd" id="1_crvqa"]
+
+[resource]
+script = ExtResource("1_crvqa")
+health = 1
+buff = "big_ball"
+wall = false
+metadata/_custom_type_script = "uid://nbhe2mqgx7cw"
