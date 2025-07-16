@@ -17,8 +17,20 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("start_ball"):
+		if $BallSpawnPosition.visible:
+			started_ball.emit($BallSpawnPosition.global_position)
+			$BallSpawnPosition.visible = false
+	
 	horizontal_velocity = 0
-	if event is InputEventMouseMotion:
+	if event is InputEventKey:
+		var horizontal_dir = 0
+		if Input.is_action_pressed("ui_right"):
+			horizontal_dir = 1
+		if Input.is_action_pressed("ui_left"):
+			horizontal_dir = -1
+		horizontal_velocity = horizontal_dir * default_input_speed
+	elif event is InputEventMouseMotion:
 		var mouse_horizontal_delta = event.relative.x
 		if abs(mouse_horizontal_delta) < mouse_input_threshold:
 			return
@@ -27,14 +39,3 @@ func _input(event: InputEvent) -> void:
 		else:
 			var horizontal_dir = 1 if mouse_horizontal_delta > 0 else -1
 			horizontal_velocity = horizontal_dir * default_input_speed
-	elif event is InputEventKey:
-		var horizontal_dir = 0
-		if Input.is_action_pressed("ui_right"):
-			horizontal_dir = 1
-		if Input.is_action_pressed("ui_left"):
-			horizontal_dir = -1
-		horizontal_velocity = horizontal_dir * default_input_speed
-	elif Input.is_action_just_pressed("start_ball"):
-		if $BallSpawnPosition.visible:
-			started_ball.emit($BallSpawnPosition.global_position)
-			$BallSpawnPosition.visible = false

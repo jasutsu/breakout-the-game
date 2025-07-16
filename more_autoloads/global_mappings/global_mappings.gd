@@ -25,10 +25,12 @@ enum BrickType {
 	BUFF_BALL_BIG,
 	BUFF_PADDLE_FAST,
 	BUFF_PADDLE_TWO,
+	TWO_CRACKABLE,
 }
 const BrickResources: Dictionary[int, BrickData] = {
 	BrickType.NORMAL: preload("res://scenes/brick/brick_resource_types/brick_normal.tres"),
 	BrickType.CRACKABLE: preload("res://scenes/brick/brick_resource_types/brick_crackable.tres"),
+	BrickType.TWO_CRACKABLE: preload("res://scenes/brick/brick_resource_types/brick_two_crackable.tres"),
 	BrickType.WALL: preload("res://scenes/brick/brick_resource_types/brick_wall.tres"),
 	BrickType.BUFF_BALL_SPLIT: preload("res://scenes/brick/brick_resource_types/brick_buff_ball_split.tres"),
 	BrickType.BUFF_BALL_FAST: preload("res://scenes/brick/brick_resource_types/brick_buff_ball_fast.tres"),
@@ -36,3 +38,5 @@ const BrickResources: Dictionary[int, BrickData] = {
 	BrickType.BUFF_PADDLE_FAST: preload("res://scenes/brick/brick_resource_types/brick_buff_paddle_fast.tres"),
 	BrickType.BUFF_PADDLE_TWO: preload("res://scenes/brick/brick_resource_types/brick_buff_paddle_two.tres"),
 }
+
+const BrickColors: ColorPalette = preload("res://scenes/brick/brick_colors.tres") as ColorPalette

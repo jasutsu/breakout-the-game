@@ -1,0 +1,4 @@
+[gd_resource type="ColorPalette" format=3 uid="uid://me2mfh2stphp"]
+
+[resource]
+colors = PackedColorArray(0.4366, 0.446827, 0.59, 1, 0.373667, 0.59, 0.295, 1, 0.89, 0.671357, 0.2937, 1, 0.8, 0.437333, 0.256, 1, 0.68, 0.2244, 0.277553, 1, 0.58, 0.3016, 0.44544, 1)

@@ -1,35 +1,81 @@
-[gd_scene load_steps=17 format=4 uid="uid://5hcrdavemheg"]
+[gd_scene load_steps=37 format=4 uid="uid://5hcrdavemheg"]
 
 [ext_resource type="PackedScene" uid="uid://cp7ui7343gpf8" path="res://scenes/paddle/paddle.tscn" id="1_ksju7"]
-[ext_resource type="PackedScene" uid="uid://b3n8xovej6ua8" path="res://scenes/brick/brick_scene_types/brick_buff_ball_split.tscn" id="4_oc4kc"]
+[ext_resource type="PackedScene" uid="uid://cf8icxc8kujdg" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_fast.tscn" id="4_iav0o"]
 [ext_resource type="PackedScene" uid="uid://cagqy1pk02u3u" path="res://scenes/kill_zone/kill_zone.tscn" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://b6cpbbuu6anmf" path="res://scenes/buff_manager/buff_manager.tscn" id="5_6761a"]
+[ext_resource type="PackedScene" uid="uid://4hsmsjmusdnx" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_split.tscn" id="5_dnkej"]
 [ext_resource type="PackedScene" uid="uid://da1wnxf405jde" path="res://scenes/ball_manager/ball_manager.tscn" id="5_oc4kc"]
-[ext_resource type="PackedScene" uid="uid://cd20lovnjhl1p" path="res://scenes/brick/brick_scene_types/brick_crackable.tscn" id="5_s8va5"]
-[ext_resource type="PackedScene" uid="uid://box5dwrtve8o7" path="res://scenes/brick/brick_scene_types/brick_normal.tscn" id="6_dga24"]
-[ext_resource type="PackedScene" uid="uid://k3ea7t607iys" path="res://scenes/brick/brick_scene_types/brick_buff_ball_big.tscn" id="7_iav0o"]
-[ext_resource type="PackedScene" uid="uid://dubq0dkafxo5s" path="res://scenes/brick/brick_scene_types/brick_buff_ball_fast.tscn" id="8_dnkej"]
-[ext_resource type="PackedScene" uid="uid://dwkfdt7pt7qrv" path="res://scenes/brick/brick_scene_types/brick_buff_paddle_fast.tscn" id="9_mm8aj"]
-[ext_resource type="PackedScene" uid="uid://b4ixvqh0wv138" path="res://scenes/brick/brick_scene_types/brick_buff_paddle_two.tscn" id="10_wtwp4"]
-[ext_resource type="PackedScene" uid="uid://cmslp0sug6kvk" path="res://scenes/brick/brick_scene_types/brick_buff_wall.tscn" id="11_iwr0g"]
+[ext_resource type="PackedScene" uid="uid://bk6mesllckv1r" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_paddle_fast.tscn" id="6_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://bochiwq84npt0" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_paddle_two.tscn" id="7_wtwp4"]
+[ext_resource type="PackedScene" uid="uid://cm2t4w0vy4lsa" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_crackable.tscn" id="8_iwr0g"]
+[ext_resource type="PackedScene" uid="uid://dx38e5oq4wwyt" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_normal.tscn" id="9_bahl2"]
+[ext_resource type="PackedScene" uid="uid://cax05hauy5hb8" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_wall.tscn" id="10_np2pn"]
+[ext_resource type="PackedScene" uid="uid://b708u1st2a07d" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_big.tscn" id="11_v6ha0"]
+[ext_resource type="PackedScene" uid="uid://dko02mc02sfcj" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_wall.tscn" id="12_mkypq"]
+[ext_resource type="PackedScene" uid="uid://chgn1bm0yfwfm" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_big.tscn" id="13_ndtll"]
+[ext_resource type="PackedScene" uid="uid://csqnsw1ic45ih" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_big.tscn" id="13_x7jkp"]
+[ext_resource type="PackedScene" uid="uid://bcljnqy4jb6s1" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_fast.tscn" id="14_0qwwm"]
+[ext_resource type="PackedScene" uid="uid://dy2xdmmioucfd" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_fast.tscn" id="14_7h2jl"]
+[ext_resource type="PackedScene" uid="uid://db66x0vno7sli" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_split.tscn" id="15_mqh5v"]
+[ext_resource type="PackedScene" uid="uid://c22b2xa60r00j" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_split.tscn" id="15_t4umt"]
+[ext_resource type="PackedScene" uid="uid://csixf31oagao3" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_paddle_fast.tscn" id="16_4yk0h"]
+[ext_resource type="PackedScene" uid="uid://b5g7dpmofdog5" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_normal.tscn" id="17_o7j4k"]
+[ext_resource type="PackedScene" uid="uid://iituxr115fbn" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_paddle_two.tscn" id="17_vmrhw"]
+[ext_resource type="PackedScene" uid="uid://2w74p5rune35" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_paddle_fast.tscn" id="18_31oqk"]
+[ext_resource type="PackedScene" uid="uid://dh5yma5l1d3so" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_normal.tscn" id="19_wvtie"]
+[ext_resource type="PackedScene" uid="uid://dxynha7itji1w" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_paddle_two.tscn" id="19_x7jkp"]
+[ext_resource type="PackedScene" uid="uid://cs0sp3lbue88e" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_wall.tscn" id="20_0qwwm"]
+[ext_resource type="PackedScene" uid="uid://camc360tawi2r" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_two_crackable.tscn" id="20_x7jkp"]
+[ext_resource type="PackedScene" uid="uid://dld2x2db3vvso" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_two_crackable.tscn" id="28_0qwwm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6761a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sk5k4"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qxy0u"]
-resource_name = "bricks"
-scenes/1/scene = ExtResource("4_oc4kc")
-scenes/2/scene = ExtResource("5_s8va5")
-scenes/3/scene = ExtResource("6_dga24")
-scenes/4/scene = ExtResource("7_iav0o")
-scenes/5/scene = ExtResource("8_dnkej")
-scenes/6/scene = ExtResource("9_mm8aj")
-scenes/7/scene = ExtResource("10_wtwp4")
-scenes/8/scene = ExtResource("11_iwr0g")
+resource_name = "16x16"
+scenes/2/scene = ExtResource("8_iwr0g")
+scenes/9/scene = ExtResource("11_v6ha0")
+scenes/10/scene = ExtResource("4_iav0o")
+scenes/11/scene = ExtResource("5_dnkej")
+scenes/12/scene = ExtResource("6_mm8aj")
+scenes/13/scene = ExtResource("7_wtwp4")
+scenes/15/scene = ExtResource("9_bahl2")
+scenes/16/scene = ExtResource("10_np2pn")
 
 [sub_resource type="TileSet" id="TileSet_x42e6"]
 sources/2 = SubResource("TileSetScenesCollectionSource_qxy0u")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_t4umt"]
+resource_name = "32x16"
+scenes/1/scene = ExtResource("12_mkypq")
+scenes/2/scene = ExtResource("13_x7jkp")
+scenes/3/scene = ExtResource("14_0qwwm")
+scenes/4/scene = ExtResource("15_t4umt")
+scenes/5/scene = ExtResource("16_4yk0h")
+scenes/6/scene = ExtResource("17_vmrhw")
+scenes/8/scene = ExtResource("19_wvtie")
+scenes/9/scene = ExtResource("20_x7jkp")
+
+[sub_resource type="TileSet" id="TileSet_4yk0h"]
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetScenesCollectionSource_t4umt")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vmrhw"]
+resource_name = "32x8"
+scenes/1/scene = ExtResource("13_ndtll")
+scenes/2/scene = ExtResource("14_7h2jl")
+scenes/3/scene = ExtResource("15_mqh5v")
+scenes/5/scene = ExtResource("17_o7j4k")
+scenes/6/scene = ExtResource("18_31oqk")
+scenes/7/scene = ExtResource("19_x7jkp")
+scenes/8/scene = ExtResource("20_0qwwm")
+scenes/9/scene = ExtResource("28_0qwwm")
+
+[sub_resource type="TileSet" id="TileSet_cfnpk"]
+tile_size = Vector2i(32, 8)
+sources/0 = SubResource("TileSetScenesCollectionSource_vmrhw")
 
 [node name="Level_1" type="Node"]
 
@@ -60,13 +106,21 @@ shape = SubResource("WorldBoundaryShape2D_6761a")
 
 [node name="BuffManager" parent="." instance=ExtResource("5_6761a")]
 
+[node name="BallManager" parent="." instance=ExtResource("5_oc4kc")]
+
 [node name="BrickManager" type="Node" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="BrickManager"]
-tile_map_data = PackedByteArray("AAABAAQAAgAAAAAAAwACAAQAAgAAAAAAAQADAAQAAgAAAAAAAwAEAAQAAgAAAAAAAQAFAAQAAgAAAAAAAQAGAAQAAgAAAAAAAQAHAAQAAgAAAAAAAwAIAAQAAgAAAAAAAQAJAAQAAgAAAAAAAQAKAAQAAgAAAAAAAQALAAQAAgAAAAAAAQABAAMAAgAAAAAAAgACAAMAAgAAAAAAAgADAAMAAgAAAAAAAgAEAAMAAgAAAAAAAQAFAAMAAgAAAAAAAgAGAAMAAgAAAAAAAgAHAAMAAgAAAAAAAgAIAAMAAgAAAAAAAgAJAAMAAgAAAAAAAQAKAAMAAgAAAAAAAQADAAEAAgAAAAAACAAIAAEAAgAAAAAACAABAAEAAgAAAAAAAwACAAEAAgAAAAAAAwAEAAEAAgAAAAAAAwAFAAEAAgAAAAAAAQAGAAEAAgAAAAAAAQAHAAEAAgAAAAAAAQAJAAEAAgAAAAAAAwABAAIAAgAAAAAAAgACAAIAAgAAAAAAAgADAAIAAgAAAAAAAgAEAAIAAgAAAAAAAQAFAAIAAgAAAAAAAgAGAAIAAgAAAAAAAgAHAAIAAgAAAAAAAQAIAAIAAgAAAAAAAgAJAAIAAgAAAAAAAQABAAAAAgAAAAAAAgACAAwAAgAAAAAAAQADAAwAAgAAAAAAAQAHAAwAAgAAAAAAAQAIAAwAAgAAAAAAAwAJAAwAAgAAAAAAAwADAAkAAgAAAAAAAwAHAAkAAgAAAAAAAwAIAAoAAgAAAAAAAwAJAAoAAgAAAAAAAwAGAAYAAgAAAAAAAQADAAYAAgAAAAAAAQACAAYAAgAAAAAAAwACAAcAAgAAAAAAAwABAAgAAgAAAAAAAwABAAkAAgAAAAAAAwALAAgAAgAAAAAAAwALAAkAAgAAAAAAAwAMAAkAAgAAAAAAAwAMAAsAAgAAAAAAAwACAAsAAgAAAAAAAQADAAsAAgAAAAAAAQAKAA0AAgAAAAAAAQAKAAoAAgAAAAAAAQAHAAoAAgAAAAAAAQAIAAcAAgAAAAAAAQAEAAYAAgAAAAAAAQAAAAcAAgAAAAAAAQAAAAgAAgAAAAAAAQAAAAkAAgAAAAAAAQADAAUAAgAAAAAAAQAJAAUAAgAAAAAAAQALAAUAAgAAAAAAAQA=")
+[node name="16x16" type="TileMapLayer" parent="BrickManager"]
+tile_map_data = PackedByteArray("AAAIAAkAAgAAAAAAAgAJAAkAAgAAAAAAAgAKAAkAAgAAAAAAAgAKAAgAAgAAAAAAAgAJAAgAAgAAAAAAAgAJAAcAAgAAAAAAAgAIAAcAAgAAAAAAAgAIAAYAAgAAAAAAAgAIAAgAAgAAAAAAAgAJAAYAAgAAAAAAAgAJAAUAAgAAAAAAAgAKAAUAAgAAAAAAAgAKAAYAAgAAAAAAAgAKAAcAAgAAAAAAAgALAAkAAgAAAAAAAgALAAgAAgAAAAAAAgALAAcAAgAAAAAAAgALAAYAAgAAAAAAAgALAAUAAgAAAAAAAgAIAAUAAgAAAAAAAgA=")
 tile_set = SubResource("TileSet_x42e6")
 
-[node name="BallManager" parent="." instance=ExtResource("5_oc4kc")]
+[node name="32x16" type="TileMapLayer" parent="BrickManager"]
+tile_map_data = PackedByteArray("AAACAAkAAAAAAAAACQADAAkAAAAAAAAACQADAAgAAAAAAAAACQADAAcAAAAAAAAACQADAAYAAAAAAAAACQACAAYAAAAAAAAACQACAAcAAAAAAAAACQACAAgAAAAAAAAACQACAAUAAAAAAAAACQADAAUAAAAAAAAACQA=")
+tile_set = SubResource("TileSet_4yk0h")
+
+[node name="32x8" type="TileMapLayer" parent="BrickManager"]
+tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAACQAAAAsAAAAAAAAACQAAAAwAAAAAAAAACQAAAA0AAAAAAAAACQAAAA4AAAAAAAAACQAAAA8AAAAAAAAACQABAAoAAAAAAAAACQABAAsAAAAAAAAACQABAAwAAAAAAAAACQABAA0AAAAAAAAACQABAA4AAAAAAAAACQABAA8AAAAAAAAACQABABAAAAAAAAAACQAAABAAAAAAAAAACQABABEAAAAAAAAACQAAABIAAAAAAAAACQABABIAAAAAAAAACQABABMAAAAAAAAACQAAABEAAAAAAAAACQAAABMAAAAAAAAACQAAABQAAAAAAAAACQA=")
+tile_set = SubResource("TileSet_cfnpk")
 
 [connection signal="started_ball" from="Paddle" to="BallManager" method="_on_paddle_started_ball"]
 [connection signal="body_entered" from="KillZone" to="BallManager" method="_on_kill_zone_body_entered"]
