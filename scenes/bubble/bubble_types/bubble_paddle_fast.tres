@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BubbleData" load_steps=3 format=3 uid="uid://coajb1r50djsh"]
+
+[ext_resource type="Script" uid="uid://ljgryamo5o4r" path="res://scenes/bubble/bubble_data.gd" id="1_f5ug4"]
+[ext_resource type="Texture2D" uid="uid://dl3g112ouun0j" path="res://assets/art/pixel_art/fast_paddle.png" id="2_r78ps"]
+
+[resource]
+script = ExtResource("1_f5ug4")
+type = 3
+texture = ExtResource("2_r78ps")
+speed = 120.0
+size = 1.0
+duration = 5.0
+metadata/_custom_type_script = "uid://ljgryamo5o4r"

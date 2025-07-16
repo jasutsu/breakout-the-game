@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name Ball
 
-const speed: float = 80.0
+const speed: float = 120.0
 const safety_impulse: float = 20.0
 var is_hit = false
 #func update_linear_velocity(direction: Vector2, speed: float) -> void:

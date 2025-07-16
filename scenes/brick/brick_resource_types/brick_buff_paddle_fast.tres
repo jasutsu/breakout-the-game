@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ssvwr")
 health = 1
-buff = "fast_ball"
+has_buff = true
+buff_type = 3
 wall = false
 metadata/_custom_type_script = "uid://nbhe2mqgx7cw"

@@ -1,25 +1,24 @@
 extends Area2D
 class_name Bubble
 
-@export var bubble_data: BubbleData
+@export var buff_type: GlobalMappings.BuffType
 
-signal bubble_captured(bubble_data: BubbleData)
+signal bubble_captured(buff_type: GlobalMappings.BuffType)
 
-func instantiate() -> void:
-	if not bubble_data:
-		push_error("No bubble data in the assigned")
+func initialize() -> void:
+	if not buff_type:
+		push_error("No buff type assigned to bubble")
 
-	$Sprite2D.texture = bubble_data.texture
-	scale *= bubble_data.size
+	$Sprite2D.texture = GlobalMappings.BubbleResources[buff_type].texture
+	scale *= GlobalMappings.BubbleResources[buff_type].size
 	
 	var buff_manager: BuffManager = get_parent() as BuffManager
 	bubble_captured.connect(buff_manager.start_buff)
 
 func _process(delta: float) -> void:
-	if bubble_data:
-		position += Vector2.DOWN * bubble_data.speed * delta
+	if buff_type != null:
+		position += Vector2.DOWN * GlobalMappings.BubbleResources[buff_type].speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	print(bubble_data.duration)
-	bubble_captured.emit(bubble_data)
+	bubble_captured.emit(buff_type)
 	queue_free()

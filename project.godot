@@ -18,8 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 UiManager="*res://ui/ui_manager/ui_manager.tscn"
-GameManager="*res://game_manager/game_manager.tscn"
-SoundManager="*res://sound_manager/sound_manager.tscn"
+GameManager="*res://more_autoloads/game_manager/game_manager.tscn"
+SoundManager="*res://more_autoloads/sound_manager/sound_manager.tscn"
+GlobalMappings="*res://more_autoloads/global_mappings/global_mappings.gd"
 
 [display]
 

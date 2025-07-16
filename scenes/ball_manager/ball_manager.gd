@@ -2,13 +2,16 @@ extends Node
 
 var ball_scene = preload("res://scenes/ball/ball.tscn")
 var balls: Array[Ball] = []
+const max_balls: int = 10
 
-func _on_buff_manager_buff_started(bubble_data: BubbleData) -> void:
-	if bubble_data.name == "big_ball":
+func _on_buff_manager_buff_started(buff_type: GlobalMappings.BuffType) -> void:
+	if buff_type == GlobalMappings.BuffType.BALL_BIG:
 		pass
-	elif bubble_data.name == "fast_ball":
+	if buff_type == GlobalMappings.BuffType.BALL_FAST:
 		pass
-	elif bubble_data.name == "split_ball":
+	if buff_type == GlobalMappings.BuffType.BALL_SPLIT:
+		if balls.size() >= max_balls:
+			return
 		var new_balls: Array[Ball] = []
 		for ball in balls:
 			var direction := ball.linear_velocity.normalized()
@@ -21,14 +24,15 @@ func _on_buff_manager_buff_started(bubble_data: BubbleData) -> void:
 		balls.clear()
 		balls = new_balls
 
-func _on_buff_manager_buff_finished(bubble_data: BubbleData) -> void:
-	if bubble_data.name == "big_ball":
+func _on_buff_manager_buff_finished(buff_type: GlobalMappings.BuffType) -> void:
+	if buff_type == GlobalMappings.BuffType.BALL_BIG:
 		pass
-	elif bubble_data.name == "fast_ball":
+	if buff_type == GlobalMappings.BuffType.BALL_FAST:
 		pass
 
 func spawn_ball(position: Vector2) -> Ball:
 	var ball: Ball = ball_scene.instantiate() as Ball
+	#call_deferred("add_child", ball)
 	add_child(ball)
 	ball.position = position
 	return ball

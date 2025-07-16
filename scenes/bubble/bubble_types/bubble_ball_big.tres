@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BubbleData" load_steps=3 format=3 uid="uid://btf85ttvjc701"]
+
+[ext_resource type="Script" uid="uid://ljgryamo5o4r" path="res://scenes/bubble/bubble_data.gd" id="1_ldc1w"]
+[ext_resource type="Texture2D" uid="uid://d3ff8kybji6es" path="res://assets/art/pixel_art/big_ball.png" id="2_52kxj"]
+
+[resource]
+script = ExtResource("1_ldc1w")
+type = 2
+texture = ExtResource("2_52kxj")
+speed = 120.0
+size = 1.0
+duration = 5.0
+metadata/_custom_type_script = "uid://ljgryamo5o4r"

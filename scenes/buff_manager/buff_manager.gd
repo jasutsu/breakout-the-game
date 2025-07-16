@@ -1,35 +1,27 @@
 extends Node
 class_name BuffManager
 
-var bubble_scene = preload("res://scenes/bubble/bubble.tscn")
+signal buff_started(buff_type: GlobalMappings.BuffType)
+signal buff_finished(buff_type: GlobalMappings.BuffType)
 
-signal buff_started(bubble_data: BubbleData)
-signal buff_finished(bubble_data: BubbleData)
-
-var timers: Dictionary[BubbleData, SceneTreeTimer] = {}
+var timers: Dictionary[GlobalMappings.BuffType, SceneTreeTimer] = {}
 
 func _ready() -> void:
 	buff_started.connect(UiManager.start_buff)
 	buff_finished.connect(UiManager.finish_buff)
 
-func spawn_bubble(bubble_data: BubbleData, pos: Vector2) -> void:
-	var bubble = bubble_scene.instantiate()
-	bubble.bubble_data = bubble_data
-	bubble.position = pos
-	add_child(bubble)
-	bubble.instantiate()
-
-func start_buff(bubble_data: BubbleData) -> void:
-	if timers.has(bubble_data):
-		var time_left: float = timers[bubble_data].time_left
-		timers[bubble_data].time_left = time_left + bubble_data.duration
+func start_buff(buff_type: GlobalMappings.BuffType) -> void:
+	if timers.has(buff_type):
+		var time_left: float = timers[buff_type].time_left
+		# TODO: use start() instead or time_left directly
+		timers[buff_type].time_left = time_left + GlobalMappings.BubbleResources[buff_type].duration
 		return
 		
-	buff_started.emit(bubble_data)
-	var timer: SceneTreeTimer = get_tree().create_timer(bubble_data.duration)
-	timer.timeout.connect(finish_buff.bind(bubble_data))
-	timers[bubble_data] = timer
+	buff_started.emit(buff_type)
+	var timer: SceneTreeTimer = get_tree().create_timer(GlobalMappings.BubbleResources[buff_type].duration)
+	timer.timeout.connect(finish_buff.bind(buff_type))
+	timers[buff_type] = timer
 
-func finish_buff(bubble_data: BubbleData) -> void:
-	timers.erase(bubble_data)
-	buff_finished.emit(bubble_data)
+func finish_buff(buff_type: GlobalMappings.BuffType) -> void:
+	timers.erase(buff_type)
+	buff_finished.emit(buff_type)

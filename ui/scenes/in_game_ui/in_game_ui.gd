@@ -2,9 +2,9 @@ extends Control
 
 var buff_texture_scene = preload("res://ui/scenes/in_game_ui/buff_texture.tscn")
 
-func add_texture_rect(bubble_data: BubbleData) -> TextureRect:
+func add_texture_rect(buff_type: GlobalMappings.BuffType) -> TextureRect:
 	var buff_texture: TextureRect = buff_texture_scene.instantiate()
-	buff_texture.texture = bubble_data.texture
+	buff_texture.texture = GlobalMappings.BubbleResources[buff_type].texture
 	%BuffContainer.add_child(buff_texture)
 	return buff_texture
 

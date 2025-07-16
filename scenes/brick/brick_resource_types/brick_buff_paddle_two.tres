@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_2qeo5")
 health = 1
-buff = "two_paddle"
+has_buff = true
+buff_type = 4
 wall = false
 metadata/_custom_type_script = "uid://nbhe2mqgx7cw"

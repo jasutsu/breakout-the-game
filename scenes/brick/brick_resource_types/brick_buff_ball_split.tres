@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_2stqo")
 health = 1
-buff = "split_ball"
+has_buff = true
+buff_type = 0
 wall = false
 metadata/_custom_type_script = "uid://nbhe2mqgx7cw"
