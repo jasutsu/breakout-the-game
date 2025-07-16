@@ -4,6 +4,7 @@ class_name Ball
 const speed: float = 120.0
 const safety_impulse: float = 20.0
 var is_hit = false
+const easy_mode_angle_offset: float = 0.5
 #func update_linear_velocity(direction: Vector2, speed: float) -> void:
 	#linear_velocity = direction * speed
 
@@ -22,6 +23,8 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, lo
 	elif body.is_in_group("paddle"):
 		var body_2d: Node2D = body as Node2D
 		var new_direction = position - body_2d.position
+		if GameManager.is_difficulty_easy:
+			new_direction.x *= easy_mode_angle_offset
 		update_direction(new_direction)
 
 func _on_last_hit_timer_timeout() -> void:

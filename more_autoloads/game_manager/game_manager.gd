@@ -2,6 +2,8 @@ extends Node
 
 var bubble_scene = preload("res://scenes/bubble/bubble.tscn")
 
+var is_difficulty_easy = true
+
 func spawn_bubble(buff_type: GlobalMappings.BuffType, pos: Vector2) -> void:
 	var bubble: Bubble = bubble_scene.instantiate() as Bubble
 	bubble.buff_type = buff_type

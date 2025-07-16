@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var default_input_speed := 6000
 @export var mouse_input_speed := 300
 @export var mouse_input_threshold := 2.0
-@export var is_difficulty_easy = true
 
 var horizontal_velocity: float = 0.0
 
@@ -34,7 +33,7 @@ func _input(event: InputEvent) -> void:
 		var mouse_horizontal_delta = event.relative.x
 		if abs(mouse_horizontal_delta) < mouse_input_threshold:
 			return
-		if is_difficulty_easy:
+		if GameManager.is_difficulty_easy:
 			horizontal_velocity = mouse_horizontal_delta * mouse_input_speed
 		else:
 			var horizontal_dir = 1 if mouse_horizontal_delta > 0 else -1

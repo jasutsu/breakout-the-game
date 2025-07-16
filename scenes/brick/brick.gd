@@ -10,8 +10,12 @@ var health: int
 func _ready() -> void:
 	health = GlobalMappings.BrickResources[type].health
 	
-	var colors_size = GlobalMappings.BrickColors.colors.size()
-	$Sprite2D.modulate = GlobalMappings.BrickColors.colors[randi() % colors_size]
+	var colors_size = GlobalMappings.BrickColorResource.bricks_colors.colors.size()
+	$Sprite2D.modulate = GlobalMappings.BrickColorResource.bricks_colors.colors[randi() % colors_size]
+	
+	if GlobalMappings.BrickResources[type].has_buff:
+		$BuffOutline.visible = true
+		$BuffOutline.modulate = GlobalMappings.BrickColorResource.brick_outline_color
 
 func process_on_ball_hit():
 	if GlobalMappings.BrickResources[type].wall:

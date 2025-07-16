@@ -39,4 +39,4 @@ const BrickResources: Dictionary[int, BrickData] = {
 	BrickType.BUFF_PADDLE_TWO: preload("res://scenes/brick/brick_resource_types/brick_buff_paddle_two.tres"),
 }
 
-const BrickColors: ColorPalette = preload("res://scenes/brick/brick_colors.tres") as ColorPalette
+const BrickColorResource: BrickColors = preload("res://scenes/brick/brick_colors.tres") as BrickColors
