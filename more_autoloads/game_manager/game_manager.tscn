@@ -4,3 +4,12 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_lycnq")
+
+[node name="Trajectories" type="Node" parent="."]
+
+[node name="Trajectory" type="Line2D" parent="Trajectories"]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(0, 0, 0, 0)
+width = 0.5
+default_color = Color(0.211765, 0.819608, 0.129412, 1)

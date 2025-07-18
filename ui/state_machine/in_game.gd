@@ -40,3 +40,9 @@ func on_game_over():
 		"data": GlobalMappings.GamePauseType.GAME_OVER,
 	}
 	finished.emit(UiStateNames.IN_GAME_PAUSE, data)
+
+func add_move():
+	$InGameUi.add_move()
+
+func remove_all_moves():
+	$InGameUi.remove_all_moves()

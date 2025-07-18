@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://by8ds6bnkp5pr" path="res://scenes/ball_manager/ball_manager.gd" id="1_bmvyt"]
 
-[node name="BallManager" type="Node"]
+[node name="BallManager" type="Node" groups=["ball_manager"]]
 script = ExtResource("1_bmvyt")

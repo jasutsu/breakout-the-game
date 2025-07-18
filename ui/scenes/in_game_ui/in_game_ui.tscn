@@ -39,3 +39,14 @@ expand_mode = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 60.0
+offset_top = 240.0
+offset_right = 60.0
+offset_bottom = 256.0
+
+[node name="MovesContainer" type="HBoxContainer" parent="MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2

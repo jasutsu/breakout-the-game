@@ -18,3 +18,9 @@ func on_game_over():
 
 func get_ui_current_state_name() -> String:
 	return $StateMachine.current_state_name
+
+func add_move():
+	%InGame.add_move()
+
+func remove_all_moves():
+	%InGame.remove_all_moves()

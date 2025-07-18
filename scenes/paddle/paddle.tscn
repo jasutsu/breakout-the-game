@@ -40,3 +40,9 @@ shape = SubResource("CapsuleShape2D_2sa55")
 position = Vector2(10.6214, -13.6692)
 texture = ExtResource("3_gboxc")
 region_rect = Rect2(144, 8, 8, 8)
+
+[node name="Trajectory" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(0, 0, 0, -15)
+width = 0.5
+default_color = Color(0.211765, 0.819608, 0.129412, 1)

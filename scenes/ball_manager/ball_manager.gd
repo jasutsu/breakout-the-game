@@ -1,4 +1,5 @@
 extends Node
+class_name  BallManager
 
 var ball_scene = preload("res://scenes/ball/ball.tscn")
 var balls: Array[Ball] = []
@@ -68,3 +69,17 @@ func _on_paddle_started_ball(pos: Vector2) -> void:
 	var ball = spawn_ball(pos)
 	ball.update_direction(Vector2(1, -1))
 	balls.append(ball)
+
+
+func _on_moves_zone_body_entered(body: Node2D) -> void:
+	if GameManager.paddle_hit_count < GameManager.max_paddle_hit_count:
+		return
+	
+	GameManager.enable_trajectory()
+	for ball in balls:
+		ball.apply_moves()
+
+func unapply_moves_on_all_balls():
+	GameManager.disable_trajectory()
+	for ball in balls:
+		ball.unapply_moves()

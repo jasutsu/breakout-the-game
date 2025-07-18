@@ -1,7 +1,8 @@
 extends CharacterBody2D
+class_name Paddle
 
 @export var default_input_speed := 6000
-@export var mouse_input_speed := 300
+@export var mouse_input_speed := 500
 @export var mouse_input_threshold := 2.0
 
 var speed_multiplier: float = 1.0
@@ -64,3 +65,17 @@ func _on_buff_manager_buff_finished(buff_type: GlobalMappings.BuffType) -> void:
 func change_collision_height(height: float) -> void:
 	var shape: CapsuleShape2D = $CollisionShape2D.shape as CapsuleShape2D
 	shape.height = height
+	
+
+func get_impact_position(ball_pos: Vector2, ball_dir: Vector2, ball_radius: float) -> Vector2:
+	var shape: CapsuleShape2D = $CollisionShape2D.shape as CapsuleShape2D
+	var top_y: float = position.y - shape.radius
+	var x_offset: float = (ball_dir.x / abs(ball_dir.y)) * abs(ball_pos.y - top_y)
+	print(ball_pos.x - x_offset)
+	return Vector2(ball_pos.x - x_offset, top_y - ball_radius)
+
+func get_impact_direction(impact_pos: Vector2, easy_offset: float) -> Vector2:
+	var direction := impact_pos - position
+	if GameManager.is_difficulty_easy:
+		direction.x *= easy_offset
+	return direction

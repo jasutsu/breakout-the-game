@@ -46,6 +46,7 @@ start_ball={
 2d_physics/layer_4="Bubble"
 2d_physics/layer_5="WorldBoundary"
 2d_physics/layer_6="KillZone"
+2d_physics/layer_7="MovesZone"
 
 [rendering]
 

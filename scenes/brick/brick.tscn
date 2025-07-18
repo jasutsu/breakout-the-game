@@ -8,6 +8,7 @@
 size = Vector2(32, 8)
 
 [node name="Brick" type="StaticBody2D" groups=["brick"]]
+z_index = 1
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_k3dtg")

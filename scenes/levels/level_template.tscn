@@ -1,0 +1,148 @@
+[gd_scene load_steps=40 format=3 uid="uid://5hcrdavemheg"]
+
+[ext_resource type="PackedScene" uid="uid://cp7ui7343gpf8" path="res://scenes/paddle/paddle.tscn" id="1_p1hka"]
+[ext_resource type="PackedScene" uid="uid://cagqy1pk02u3u" path="res://scenes/kill_zone/kill_zone.tscn" id="2_8cdjg"]
+[ext_resource type="PackedScene" uid="uid://b6cpbbuu6anmf" path="res://scenes/buff_manager/buff_manager.tscn" id="3_qbbld"]
+[ext_resource type="PackedScene" uid="uid://da1wnxf405jde" path="res://scenes/ball_manager/ball_manager.tscn" id="4_gsjb5"]
+[ext_resource type="Script" uid="uid://jnnnnrix5knx" path="res://scenes/brick_manager/brick_manager.gd" id="5_y3mmh"]
+[ext_resource type="PackedScene" uid="uid://cf8icxc8kujdg" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_fast.tscn" id="6_y4xkf"]
+[ext_resource type="PackedScene" uid="uid://4hsmsjmusdnx" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_split.tscn" id="7_pr0p8"]
+[ext_resource type="PackedScene" uid="uid://bk6mesllckv1r" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_paddle_fast.tscn" id="8_1pmpf"]
+[ext_resource type="PackedScene" uid="uid://bochiwq84npt0" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_paddle_two.tscn" id="9_wxy8d"]
+[ext_resource type="PackedScene" uid="uid://dx38e5oq4wwyt" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_normal.tscn" id="10_246hf"]
+[ext_resource type="PackedScene" uid="uid://cax05hauy5hb8" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_wall.tscn" id="11_0dubx"]
+[ext_resource type="PackedScene" uid="uid://cm2t4w0vy4lsa" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_crackable.tscn" id="12_1lwts"]
+[ext_resource type="PackedScene" uid="uid://b708u1st2a07d" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_big.tscn" id="13_fkk6k"]
+[ext_resource type="Script" uid="uid://df8q5hcumx81u" path="res://scenes/brick_tile_map/brick_tile_map.gd" id="14_hufox"]
+[ext_resource type="PackedScene" uid="uid://dko02mc02sfcj" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_wall.tscn" id="15_kegwa"]
+[ext_resource type="PackedScene" uid="uid://csqnsw1ic45ih" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_big.tscn" id="16_w0vln"]
+[ext_resource type="PackedScene" uid="uid://bcljnqy4jb6s1" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_fast.tscn" id="17_va4tr"]
+[ext_resource type="PackedScene" uid="uid://c22b2xa60r00j" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_split.tscn" id="18_ktyoc"]
+[ext_resource type="PackedScene" uid="uid://csixf31oagao3" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_paddle_fast.tscn" id="19_asgnd"]
+[ext_resource type="PackedScene" uid="uid://iituxr115fbn" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_paddle_two.tscn" id="20_shodu"]
+[ext_resource type="PackedScene" uid="uid://dh5yma5l1d3so" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_normal.tscn" id="21_msa20"]
+[ext_resource type="PackedScene" uid="uid://camc360tawi2r" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_two_crackable.tscn" id="22_nfq85"]
+[ext_resource type="PackedScene" uid="uid://chgn1bm0yfwfm" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_big.tscn" id="23_vg7bb"]
+[ext_resource type="PackedScene" uid="uid://dy2xdmmioucfd" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_fast.tscn" id="24_shnef"]
+[ext_resource type="PackedScene" uid="uid://db66x0vno7sli" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_split.tscn" id="25_qthb0"]
+[ext_resource type="PackedScene" uid="uid://b5g7dpmofdog5" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_normal.tscn" id="26_tit30"]
+[ext_resource type="PackedScene" uid="uid://2w74p5rune35" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_paddle_fast.tscn" id="27_rh1qo"]
+[ext_resource type="PackedScene" uid="uid://dxynha7itji1w" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_paddle_two.tscn" id="28_5iy1j"]
+[ext_resource type="PackedScene" uid="uid://cs0sp3lbue88e" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_wall.tscn" id="29_qivfw"]
+[ext_resource type="PackedScene" uid="uid://dld2x2db3vvso" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_two_crackable.tscn" id="30_1u038"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6761a"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sk5k4"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qxy0u"]
+resource_name = "16x16"
+scenes/2/scene = ExtResource("12_1lwts")
+scenes/9/scene = ExtResource("13_fkk6k")
+scenes/10/scene = ExtResource("6_y4xkf")
+scenes/11/scene = ExtResource("7_pr0p8")
+scenes/12/scene = ExtResource("8_1pmpf")
+scenes/13/scene = ExtResource("9_wxy8d")
+scenes/15/scene = ExtResource("10_246hf")
+scenes/16/scene = ExtResource("11_0dubx")
+
+[sub_resource type="TileSet" id="TileSet_x42e6"]
+sources/2 = SubResource("TileSetScenesCollectionSource_qxy0u")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_t4umt"]
+resource_name = "32x16"
+scenes/1/scene = ExtResource("15_kegwa")
+scenes/2/scene = ExtResource("16_w0vln")
+scenes/3/scene = ExtResource("17_va4tr")
+scenes/4/scene = ExtResource("18_ktyoc")
+scenes/5/scene = ExtResource("19_asgnd")
+scenes/6/scene = ExtResource("20_shodu")
+scenes/8/scene = ExtResource("21_msa20")
+scenes/9/scene = ExtResource("22_nfq85")
+
+[sub_resource type="TileSet" id="TileSet_4yk0h"]
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetScenesCollectionSource_t4umt")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vmrhw"]
+resource_name = "32x8"
+scenes/1/scene = ExtResource("23_vg7bb")
+scenes/2/scene = ExtResource("24_shnef")
+scenes/3/scene = ExtResource("25_qthb0")
+scenes/5/scene = ExtResource("26_tit30")
+scenes/6/scene = ExtResource("27_rh1qo")
+scenes/7/scene = ExtResource("28_5iy1j")
+scenes/8/scene = ExtResource("29_qivfw")
+scenes/9/scene = ExtResource("30_1u038")
+
+[sub_resource type="TileSet" id="TileSet_cfnpk"]
+tile_size = Vector2i(32, 8)
+sources/0 = SubResource("TileSetScenesCollectionSource_vmrhw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hka"]
+size = Vector2(192, 48)
+
+[node name="Level_Template" type="Node"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_p1hka")]
+position = Vector2(96, 240)
+
+[node name="KillZone" parent="." instance=ExtResource("2_8cdjg")]
+position = Vector2(96, 272)
+
+[node name="EdgeBoundaries" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EdgeBoundaries"]
+position = Vector2(0, 128)
+rotation = 1.57079
+shape = SubResource("WorldBoundaryShape2D_6761a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EdgeBoundaries"]
+position = Vector2(192, 128)
+rotation = 4.71238
+shape = SubResource("WorldBoundaryShape2D_sk5k4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EdgeBoundaries"]
+position = Vector2(96, 0)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_6761a")
+
+[node name="BuffManager" parent="." instance=ExtResource("3_qbbld")]
+
+[node name="BallManager" parent="." instance=ExtResource("4_gsjb5")]
+
+[node name="BrickManager" type="Node" parent="."]
+script = ExtResource("5_y3mmh")
+
+[node name="16x16" type="TileMapLayer" parent="BrickManager"]
+tile_set = SubResource("TileSet_x42e6")
+script = ExtResource("14_hufox")
+
+[node name="32x16" type="TileMapLayer" parent="BrickManager"]
+tile_set = SubResource("TileSet_4yk0h")
+script = ExtResource("14_hufox")
+
+[node name="32x8" type="TileMapLayer" parent="BrickManager"]
+tile_set = SubResource("TileSet_cfnpk")
+script = ExtResource("14_hufox")
+
+[node name="MovesZone" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovesZone"]
+position = Vector2(96, 232)
+shape = SubResource("RectangleShape2D_p1hka")
+
+[connection signal="started_ball" from="Paddle" to="BallManager" method="_on_paddle_started_ball"]
+[connection signal="body_entered" from="KillZone" to="BallManager" method="_on_kill_zone_body_entered"]
+[connection signal="buff_finished" from="BuffManager" to="Paddle" method="_on_buff_manager_buff_finished"]
+[connection signal="buff_finished" from="BuffManager" to="BallManager" method="_on_buff_manager_buff_finished"]
+[connection signal="buff_started" from="BuffManager" to="Paddle" method="_on_buff_manager_buff_started"]
+[connection signal="buff_started" from="BuffManager" to="BallManager" method="_on_buff_manager_buff_started"]
+[connection signal="brick_count_reduced" from="BrickManager/16x16" to="BrickManager" method="check_game_win"]
+[connection signal="brick_count_reduced" from="BrickManager/32x16" to="BrickManager" method="check_game_win"]
+[connection signal="brick_count_reduced" from="BrickManager/32x8" to="BrickManager" method="check_game_win"]
+[connection signal="body_entered" from="MovesZone" to="BallManager" method="_on_moves_zone_body_entered"]
