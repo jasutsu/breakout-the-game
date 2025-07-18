@@ -8,7 +8,7 @@ const UiStateNames = {
 	IN_GAME_PAUSE = "InGamePause",
 }
 
-@export var initial_state_name: String = UiStateNames.IN_GAME
+@export var initial_state_name: String = UiStateNames.MAIN_MENU
 
 var current_state: UiState
 var current_state_name: String

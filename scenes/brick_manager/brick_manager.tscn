@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://b0dwe01qh0xs6"]
+[gd_scene load_steps=33 format=3 uid="uid://b0dwe01qh0xs6"]
 
+[ext_resource type="Script" uid="uid://jnnnnrix5knx" path="res://scenes/brick_manager/brick_manager.gd" id="1_mjqwf"]
 [ext_resource type="PackedScene" uid="uid://cf8icxc8kujdg" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_fast.tscn" id="1_oyv50"]
 [ext_resource type="PackedScene" uid="uid://4hsmsjmusdnx" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_split.tscn" id="2_mjqwf"]
 [ext_resource type="PackedScene" uid="uid://bk6mesllckv1r" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_paddle_fast.tscn" id="3_a8h8w"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cax05hauy5hb8" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_wall.tscn" id="7_8vi4w"]
 [ext_resource type="PackedScene" uid="uid://b708u1st2a07d" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_big.tscn" id="8_3csqu"]
 [ext_resource type="PackedScene" uid="uid://dko02mc02sfcj" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_wall.tscn" id="9_8ow2q"]
+[ext_resource type="Script" uid="uid://df8q5hcumx81u" path="res://scenes/brick_tile_map/brick_tile_map.gd" id="10_a8h8w"]
 [ext_resource type="PackedScene" uid="uid://csqnsw1ic45ih" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_big.tscn" id="10_ck64q"]
 [ext_resource type="PackedScene" uid="uid://bcljnqy4jb6s1" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_fast.tscn" id="11_md2ro"]
 [ext_resource type="PackedScene" uid="uid://c22b2xa60r00j" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_split.tscn" id="12_yfo22"]
@@ -70,12 +72,20 @@ tile_size = Vector2i(32, 8)
 sources/0 = SubResource("TileSetScenesCollectionSource_vmrhw")
 
 [node name="BrickManager" type="Node"]
+script = ExtResource("1_mjqwf")
 
 [node name="16x16" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_x42e6")
+script = ExtResource("10_a8h8w")
 
 [node name="32x16" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_4yk0h")
+script = ExtResource("10_a8h8w")
 
 [node name="32x8" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_cfnpk")
+script = ExtResource("10_a8h8w")
+
+[connection signal="brick_count_reduced" from="16x16" to="." method="check_game_win"]
+[connection signal="brick_count_reduced" from="32x16" to="." method="check_game_win"]
+[connection signal="brick_count_reduced" from="32x8" to="." method="check_game_win"]

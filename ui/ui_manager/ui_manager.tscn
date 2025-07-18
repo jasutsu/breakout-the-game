@@ -55,6 +55,8 @@ visible = false
 [connection signal="settings_pressed" from="StateMachine/MainMenu/MainMenuUI" to="StateMachine/MainMenu" method="_on_main_menu_ui_settings_pressed"]
 [connection signal="back_pressed" from="StateMachine/Settings/SettingsUi" to="StateMachine/Settings" method="_on_settings_ui_back_pressed"]
 [connection signal="back_pressed" from="StateMachine/SelectLevel/SelectLevelUi" to="StateMachine/SelectLevel" method="_on_select_level_ui_back_pressed"]
+[connection signal="next_pressed" from="StateMachine/SelectLevel/SelectLevelUi" to="StateMachine/SelectLevel" method="_on_select_level_ui_next_pressed"]
 [connection signal="play_pressed" from="StateMachine/SelectLevel/SelectLevelUi" to="StateMachine/SelectLevel" method="_on_select_level_ui_play_pressed"]
+[connection signal="previous_pressed" from="StateMachine/SelectLevel/SelectLevelUi" to="StateMachine/SelectLevel" method="_on_select_level_ui_previous_pressed"]
 [connection signal="action_button_pressed" from="StateMachine/InGamePause/InGamePauseUi" to="StateMachine/InGamePause" method="_on_action_button_pressed"]
 [connection signal="go_to_main_menu_pressed" from="StateMachine/InGamePause/InGamePauseUi" to="StateMachine/InGamePause" method="_on_main_menu_pressed"]

@@ -7,6 +7,7 @@
 bg_color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [node name="MainMenuUI" type="Control"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

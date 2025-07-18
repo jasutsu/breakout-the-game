@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bjdrgqa65g4eq" path="res://ui/scenes/in_game_ui/in_game_ui.gd" id="1_s40id"]
 
 [node name="InGameUi" type="Control"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -4,31 +4,29 @@ var ball_scene = preload("res://scenes/ball/ball.tscn")
 var balls: Array[Ball] = []
 const max_balls: int = 10
 
+signal game_over
+
+func _ready() -> void:
+	game_over.connect(GameManager.set_time_scale_to_zero)
+	game_over.connect(UiManager.on_game_over)
+
 func _on_buff_manager_buff_started(buff_type: GlobalMappings.BuffType) -> void:
 	if buff_type == GlobalMappings.BuffType.BALL_BIG:
-		pass
-	if buff_type == GlobalMappings.BuffType.BALL_FAST:
-		pass
-	if buff_type == GlobalMappings.BuffType.BALL_SPLIT:
-		if balls.size() >= max_balls:
-			return
-		var new_balls: Array[Ball] = []
 		for ball in balls:
-			var direction := ball.linear_velocity.normalized()
-			var ball1 = spawn_ball(ball.position)
-			ball1.update_direction(direction.rotated(-PI/4))
-			var ball2 = spawn_ball(ball.position)
-			ball2.update_direction(direction.rotated(PI/4))
-			new_balls.append_array([ball1, ball2])
-			ball.queue_free()
-		balls.clear()
-		balls = new_balls
+			ball.apply_buff_big_ball()
+	elif buff_type == GlobalMappings.BuffType.BALL_FAST:
+		for ball in balls:
+			ball.apply_buff_fast_ball()
+	elif buff_type == GlobalMappings.BuffType.BALL_SPLIT:
+		split_ball()
 
 func _on_buff_manager_buff_finished(buff_type: GlobalMappings.BuffType) -> void:
 	if buff_type == GlobalMappings.BuffType.BALL_BIG:
-		pass
-	if buff_type == GlobalMappings.BuffType.BALL_FAST:
-		pass
+		for ball in balls:
+			ball.unapply_buff_big_ball()
+	elif buff_type == GlobalMappings.BuffType.BALL_FAST:
+		for ball in balls:
+			ball.unapply_buff_fast_ball()
 
 func spawn_ball(position: Vector2) -> Ball:
 	var ball: Ball = ball_scene.instantiate() as Ball
@@ -36,17 +34,21 @@ func spawn_ball(position: Vector2) -> Ball:
 	add_child(ball)
 	ball.position = position
 	return ball
-#
-#
-#func expand_balls():
-	#for ball in balls:
-		#ball.update_ball_data(ball_type_large)
-		#ball.update_speed(ball.speed)
-	#
-#func shrink_balls():
-	#for ball in balls:
-		#ball.update_ball_data(ball_type_normal)
-		#ball.update_speed(ball.speed)
+
+func split_ball():
+	if balls.size() * 2 >= max_balls:
+		return
+	var new_balls: Array[Ball] = []
+	for ball in balls:
+		var direction := ball.linear_velocity.normalized()
+		var ball1 = spawn_ball(ball.position)
+		ball1.update_direction(direction.rotated(-PI/4))
+		var ball2 = spawn_ball(ball.position)
+		ball2.update_direction(direction.rotated(PI/4))
+		new_balls.append_array([ball1, ball2])
+		ball.queue_free()
+	balls.clear()
+	balls = new_balls
 
 func _on_kill_zone_body_entered(body: Node2D) -> void:
 	var index: int = 0
@@ -59,7 +61,7 @@ func _on_kill_zone_body_entered(body: Node2D) -> void:
 	
 	var balls_count = balls.size()
 	if balls_count <= 0:
-		print("Game Over!")
+		game_over.emit()
 
 
 func _on_paddle_started_ball(pos: Vector2) -> void:

@@ -9,6 +9,7 @@
 bg_color = Color(0, 0, 0, 0.188235)
 
 [node name="SelectLevelUi" type="Control"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,4 +88,6 @@ size_flags_horizontal = 10
 texture_normal = ExtResource("2_swfqy")
 
 [connection signal="button_clicked" from="GameButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="button_clicked" from="MarginContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]

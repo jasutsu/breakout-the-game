@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=4 uid="uid://5hcrdavemheg"]
+[gd_scene load_steps=39 format=3 uid="uid://5hcrdavemheg"]
 
 [ext_resource type="PackedScene" uid="uid://cp7ui7343gpf8" path="res://scenes/paddle/paddle.tscn" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://cf8icxc8kujdg" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_fast.tscn" id="4_iav0o"]
 [ext_resource type="PackedScene" uid="uid://cagqy1pk02u3u" path="res://scenes/kill_zone/kill_zone.tscn" id="4_x42e6"]
+[ext_resource type="Script" uid="uid://jnnnnrix5knx" path="res://scenes/brick_manager/brick_manager.gd" id="5_0qwwm"]
 [ext_resource type="PackedScene" uid="uid://b6cpbbuu6anmf" path="res://scenes/buff_manager/buff_manager.tscn" id="5_6761a"]
 [ext_resource type="PackedScene" uid="uid://4hsmsjmusdnx" path="res://scenes/brick/brick_scene_types/16x16/brick_16x6_buff_ball_split.tscn" id="5_dnkej"]
 [ext_resource type="PackedScene" uid="uid://da1wnxf405jde" path="res://scenes/ball_manager/ball_manager.tscn" id="5_oc4kc"]
@@ -17,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://csqnsw1ic45ih" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_big.tscn" id="13_x7jkp"]
 [ext_resource type="PackedScene" uid="uid://bcljnqy4jb6s1" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_fast.tscn" id="14_0qwwm"]
 [ext_resource type="PackedScene" uid="uid://dy2xdmmioucfd" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_fast.tscn" id="14_7h2jl"]
+[ext_resource type="Script" uid="uid://df8q5hcumx81u" path="res://scenes/brick_tile_map/brick_tile_map.gd" id="14_t4umt"]
 [ext_resource type="PackedScene" uid="uid://db66x0vno7sli" path="res://scenes/brick/brick_scene_types/32x8/brick_32x8_ball_split.tscn" id="15_mqh5v"]
 [ext_resource type="PackedScene" uid="uid://c22b2xa60r00j" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_ball_split.tscn" id="15_t4umt"]
 [ext_resource type="PackedScene" uid="uid://csixf31oagao3" path="res://scenes/brick/brick_scene_types/32x16/brick_32x16_buff_paddle_fast.tscn" id="16_4yk0h"]
@@ -109,20 +111,27 @@ shape = SubResource("WorldBoundaryShape2D_6761a")
 [node name="BallManager" parent="." instance=ExtResource("5_oc4kc")]
 
 [node name="BrickManager" type="Node" parent="."]
+script = ExtResource("5_0qwwm")
 
 [node name="16x16" type="TileMapLayer" parent="BrickManager"]
-tile_map_data = PackedByteArray("AAAIAAkAAgAAAAAAAgAJAAkAAgAAAAAAAgAKAAkAAgAAAAAAAgAIAAcAAgAAAAAAAgAIAAgAAgAAAAAAAgAKAAgAAgAAAAAAAgAKAAcAAgAAAAAAAgAKAAYAAgAAAAAAAgAKAAUAAgAAAAAAAgAJAAUAAgAAAAAACwAJAAYAAgAAAAAAAgAJAAcAAgAAAAAAAgAJAAgAAgAAAAAAAgAIAAYAAgAAAAAAAgAIAAUAAgAAAAAACwA=")
+tile_map_data = PackedByteArray(0, 0, 8, 0, 12, 0, 2, 0, 0, 0, 0, 0, 16, 0, 7, 0, 12, 0, 2, 0, 0, 0, 0, 0, 15, 0)
 tile_set = SubResource("TileSet_x42e6")
+script = ExtResource("14_t4umt")
 
 [node name="32x16" type="TileMapLayer" parent="BrickManager"]
-tile_map_data = PackedByteArray("AAACAAkAAAAAAAAAAgADAAkAAAAAAAAACQADAAgAAAAAAAAACQADAAcAAAAAAAAACQADAAYAAAAAAAAACQACAAYAAAAAAAAACQACAAcAAAAAAAAACQACAAgAAAAAAAAACQACAAUAAAAAAAAABAADAAUAAAAAAAAABAA=")
 tile_set = SubResource("TileSet_4yk0h")
+script = ExtResource("14_t4umt")
 
 [node name="32x8" type="TileMapLayer" parent="BrickManager"]
-tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAwAAAAsAAAAAAAAACQAAAAwAAAAAAAAACQAAAA0AAAAAAAAACQAAAA4AAAAAAAAACQAAAA8AAAAAAAAACQABAAoAAAAAAAAAAwABAAsAAAAAAAAACQABAAwAAAAAAAAACQABAA0AAAAAAAAACQABAA4AAAAAAAAACQABAA8AAAAAAAAACQABABAAAAAAAAAACQAAABAAAAAAAAAACQABABEAAAAAAAAACQAAABIAAAAAAAAACQABABIAAAAAAAAACQABABMAAAAAAAAACQAAABEAAAAAAAAACQAAABMAAAAAAAAACQAAABQAAAAAAAAABgA=")
 tile_set = SubResource("TileSet_cfnpk")
+script = ExtResource("14_t4umt")
 
 [connection signal="started_ball" from="Paddle" to="BallManager" method="_on_paddle_started_ball"]
 [connection signal="body_entered" from="KillZone" to="BallManager" method="_on_kill_zone_body_entered"]
+[connection signal="buff_finished" from="BuffManager" to="Paddle" method="_on_buff_manager_buff_finished"]
 [connection signal="buff_finished" from="BuffManager" to="BallManager" method="_on_buff_manager_buff_finished"]
+[connection signal="buff_started" from="BuffManager" to="Paddle" method="_on_buff_manager_buff_started"]
 [connection signal="buff_started" from="BuffManager" to="BallManager" method="_on_buff_manager_buff_started"]
+[connection signal="brick_count_reduced" from="BrickManager/16x16" to="BrickManager" method="check_game_win"]
+[connection signal="brick_count_reduced" from="BrickManager/32x16" to="BrickManager" method="check_game_win"]
+[connection signal="brick_count_reduced" from="BrickManager/32x8" to="BrickManager" method="check_game_win"]

@@ -40,3 +40,26 @@ const BrickResources: Dictionary[int, BrickData] = {
 }
 
 const BrickColorResource: BrickColors = preload("res://scenes/brick/brick_colors.tres") as BrickColors
+
+
+
+enum GamePauseType {
+	PAUSE,
+	GAME_OVER,
+	GAME_WIN,
+}
+
+const PauseActionText: Dictionary[int, String] = {
+	GamePauseType.PAUSE: "Resume",
+	GamePauseType.GAME_OVER: "Try Again",
+	GamePauseType.GAME_WIN: "Next Level",
+}
+
+
+
+const GAME_LEVEL_PATH_PREFIX: String = "res://scenes/levels/level_"
+const GAME_LEVEL_PATH_SUFFIX: String = ".tscn"
+
+
+
+const IN_GAME_STATE_NAME: String = "InGame"
