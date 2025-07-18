@@ -11,6 +11,7 @@ func _ready() -> void:
 	buff_finished.connect(UiManager.finish_buff)
 
 func start_buff(buff_type: GlobalMappings.BuffType) -> void:
+	SoundManager.play_sfx(GlobalMappings.SfxType.BUFF_STARTED)
 	if timers.has(buff_type):
 		var time_left: float = timers[buff_type].time_left
 		# TODO: use start() instead or time_left directly

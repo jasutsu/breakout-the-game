@@ -10,6 +10,7 @@ signal game_over
 func _ready() -> void:
 	game_over.connect(GameManager.set_time_scale_to_zero)
 	game_over.connect(UiManager.on_game_over)
+	game_over.connect(SoundManager.play_sfx.bind(GlobalMappings.SfxType.GAME_OVER))
 
 func _on_buff_manager_buff_started(buff_type: GlobalMappings.BuffType) -> void:
 	if buff_type == GlobalMappings.BuffType.BALL_BIG:
@@ -75,6 +76,7 @@ func _on_moves_zone_body_entered(body: Node2D) -> void:
 	if GameManager.paddle_hit_count < GameManager.max_paddle_hit_count:
 		return
 	
+	SoundManager.play_sfx(GlobalMappings.SfxType.APPLY_MOVES)
 	GameManager.enable_trajectory()
 	for ball in balls:
 		ball.apply_moves()

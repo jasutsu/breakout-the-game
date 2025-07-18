@@ -33,12 +33,14 @@ func on_game_win():
 	data = {
 		"data": GlobalMappings.GamePauseType.GAME_WIN,
 	}
+	$InGameUi.remove_all_texture_rects()
 	finished.emit(UiStateNames.IN_GAME_PAUSE, data)
 	
 func on_game_over():
 	data = {
 		"data": GlobalMappings.GamePauseType.GAME_OVER,
 	}
+	$InGameUi.remove_all_texture_rects()
 	finished.emit(UiStateNames.IN_GAME_PAUSE, data)
 
 func add_move():

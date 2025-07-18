@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Patreon Challenge 10_05.ogg-0be96c9304ead0272
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

@@ -12,6 +12,10 @@ func add_texture_rect(buff_type: GlobalMappings.BuffType) -> TextureRect:
 func remove_texture_rect(texture_node: Node) -> void:
 	texture_node.queue_free()
 
+func remove_all_texture_rects() -> void:
+	for child in %BuffContainer.get_children():
+		child.queue_free()
+
 func add_move() -> void:
 	var move_texture = move_texture_scene.instantiate()
 	%MovesContainer.add_child(move_texture)

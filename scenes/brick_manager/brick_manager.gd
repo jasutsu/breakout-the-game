@@ -5,6 +5,7 @@ signal game_win
 func _ready() -> void:
 	game_win.connect(GameManager.set_time_scale_to_zero)
 	game_win.connect(UiManager.on_game_win)
+	game_win.connect(SoundManager.play_sfx.bind(GlobalMappings.SfxType.GAME_WIN))
 
 func check_game_win() -> void:
 	var count: int = 0

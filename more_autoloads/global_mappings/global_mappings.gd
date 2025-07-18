@@ -63,3 +63,39 @@ const GAME_LEVEL_PATH_SUFFIX: String = ".tscn"
 
 
 const IN_GAME_STATE_NAME: String = "InGame"
+
+
+
+enum SfxType {
+	BUTTON_HOVER,
+	BUTTON_CLICK,
+	PADDLE_BALL_HIT,
+	BRICK_CRACKED,
+	BRICK_SMASHED,
+	BRICK_BUFF,
+	BRICK_WALL,
+	BUFF_STARTED,
+	#BUFF_FINISHED,
+	APPLY_MOVES,
+	#UNAPPLY_MOVES,
+	GAME_WIN,
+	GAME_OVER,
+	BALL_HIT_BOUNDARY,
+}
+
+const SfxResources: Dictionary[SfxType, AudioStream] = {
+	SfxType.BUTTON_HOVER: preload("res://assets/sound/choosen_sounds/button_hover.ogg"),
+	SfxType.BUTTON_CLICK: preload("res://assets/sound/choosen_sounds/button_click.ogg"),
+	SfxType.PADDLE_BALL_HIT: preload("res://assets/sound/choosen_sounds/paddle_ball_hit.ogg"),
+	SfxType.BRICK_CRACKED: preload("res://assets/sound/choosen_sounds/brick_cracked.wav"),
+	SfxType.BRICK_SMASHED: preload("res://assets/sound/choosen_sounds/brick_smashed.ogg"),
+	SfxType.BRICK_BUFF: preload("res://assets/sound/choosen_sounds/brick_buff.ogg"),
+	SfxType.BRICK_WALL: preload("res://assets/sound/choosen_sounds/brick_wall.ogg"),
+	SfxType.BUFF_STARTED: preload("res://assets/sound/choosen_sounds/buff_started.ogg"),
+	SfxType.APPLY_MOVES: preload("res://assets/sound/choosen_sounds/apply_moves.wav"),
+	SfxType.GAME_WIN: preload("res://assets/sound/choosen_sounds/game_win.ogg"),
+	SfxType.GAME_OVER: preload("res://assets/sound/choosen_sounds/game_over.ogg"),
+	SfxType.BALL_HIT_BOUNDARY: preload("res://assets/sound/choosen_sounds/ball_hit_boundary.ogg"),
+}
+
+const MusicResource: AudioStream = preload("res://assets/sound/choosen_sounds/background_music.ogg")

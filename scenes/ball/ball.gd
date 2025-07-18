@@ -60,6 +60,7 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, lo
 		var brick: Brick = body as Brick
 		brick.process_on_ball_hit()
 	elif body.is_in_group("paddle"):
+		SoundManager.play_sfx(GlobalMappings.SfxType.PADDLE_BALL_HIT)
 		$LastHitTimer.start()
 		var new_direction = position - paddle.position
 		if GameManager.is_difficulty_easy:
@@ -69,7 +70,8 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, lo
 			GameManager.increase_paddle_hit_count()
 		else:
 			GameManager.remove_moves_effect()
-			
+	else:
+		SoundManager.play_sfx(GlobalMappings.SfxType.BALL_HIT_BOUNDARY)
 
 func _on_last_hit_timer_timeout() -> void:
 	apply_impulse(Vector2.DOWN * safety_impulse)

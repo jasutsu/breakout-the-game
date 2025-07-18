@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7v1sw8s2k041"
+path="res://.godot/imported/Interior Birdecorator Menu_IN.ogg-a809f7d05a204e3531fd75e6e84c1e6a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/choosen_sounds/Interior Birdecorator Menu_IN.ogg"
+dest_files=["res://.godot/imported/Interior Birdecorator Menu_IN.ogg-a809f7d05a204e3531fd75e6e84c1e6a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
