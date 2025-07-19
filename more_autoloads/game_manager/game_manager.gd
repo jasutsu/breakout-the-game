@@ -6,7 +6,7 @@ var is_difficulty_easy = true
 var current_level_number: int = 1
 
 var paddle_hit_count: int = 0
-var max_paddle_hit_count: int = 1
+var max_paddle_hit_count: int = 5
 
 const trajectory_length: float = 400.0
 
