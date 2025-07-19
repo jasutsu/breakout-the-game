@@ -13,9 +13,13 @@ func _ready() -> void:
 	var colors_size = GlobalMappings.BrickColorResource.bricks_colors.colors.size()
 	$Sprite2D.modulate = GlobalMappings.BrickColorResource.bricks_colors.colors[randi() % colors_size]
 	
+	if GlobalMappings.BrickResources[type].wall:
+		$Sprite2D.modulate = GlobalMappings.BrickColorResource.brick_wall_color
+	
 	if GlobalMappings.BrickResources[type].has_buff:
 		$BuffOutline.visible = true
 		$BuffOutline.modulate = GlobalMappings.BrickColorResource.brick_outline_color
+	
 	
 	if not GlobalMappings.BrickResources[type].wall:
 		var brick_tile_map: BrickTileMap = get_parent() as BrickTileMap

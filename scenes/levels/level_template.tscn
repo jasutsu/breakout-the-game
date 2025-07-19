@@ -146,3 +146,4 @@ shape = SubResource("RectangleShape2D_p1hka")
 [connection signal="brick_count_reduced" from="BrickManager/32x16" to="BrickManager" method="check_game_win"]
 [connection signal="brick_count_reduced" from="BrickManager/32x8" to="BrickManager" method="check_game_win"]
 [connection signal="body_entered" from="MovesZone" to="BallManager" method="_on_moves_zone_body_entered"]
+[connection signal="body_exited" from="MovesZone" to="BallManager" method="_on_moves_zone_body_exited"]

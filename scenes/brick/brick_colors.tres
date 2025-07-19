@@ -9,4 +9,5 @@ colors = PackedColorArray(0.4366, 0.446827, 0.59, 1, 0.373667, 0.59, 0.295, 1, 0
 script = ExtResource("1_j8pf6")
 bricks_colors = SubResource("ColorPalette_j8pf6")
 brick_outline_color = Color(0.901961, 0.686275, 0.423529, 1)
+brick_wall_color = Color(0.617455, 0.617455, 0.617455, 1)
 metadata/_custom_type_script = "uid://byvfuxs2t4wkm"

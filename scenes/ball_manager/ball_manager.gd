@@ -5,6 +5,8 @@ var ball_scene = preload("res://scenes/ball/ball.tscn")
 var balls: Array[Ball] = []
 const max_balls: int = 10
 
+var ball_on_moves: Node2D
+
 signal game_over
 
 func _ready() -> void:
@@ -44,9 +46,9 @@ func split_ball():
 	for ball in balls:
 		var direction := ball.linear_velocity.normalized()
 		var ball1 = spawn_ball(ball.position)
-		ball1.update_direction(direction.rotated(-PI/4))
+		ball1.update_direction(direction.rotated(-PI/8))
 		var ball2 = spawn_ball(ball.position)
-		ball2.update_direction(direction.rotated(PI/4))
+		ball2.update_direction(direction.rotated(PI/8))
 		new_balls.append_array([ball1, ball2])
 		ball.queue_free()
 	balls.clear()
@@ -58,6 +60,11 @@ func _on_kill_zone_body_entered(body: Node2D) -> void:
 		if balls[i] == body:
 			index = i
 			break
+	
+	if ball_on_moves != null and body == ball_on_moves:
+		ball_on_moves = null
+		unapply_moves_on_all_balls()
+	
 	balls.remove_at(index)
 	body.queue_free()
 	
@@ -76,10 +83,17 @@ func _on_moves_zone_body_entered(body: Node2D) -> void:
 	if GameManager.paddle_hit_count < GameManager.max_paddle_hit_count:
 		return
 	
+	ball_on_moves = body
 	SoundManager.play_sfx(GlobalMappings.SfxType.APPLY_MOVES)
 	GameManager.enable_trajectory()
 	for ball in balls:
 		ball.apply_moves()
+
+func _on_moves_zone_body_exited(body: Node2D) -> void:
+	if ball_on_moves != null and body == ball_on_moves:
+		ball_on_moves = null
+		unapply_moves_on_all_balls()
+
 
 func unapply_moves_on_all_balls():
 	GameManager.disable_trajectory()

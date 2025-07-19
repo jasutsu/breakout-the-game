@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceh178yhoasae"]
+
+[ext_resource type="Texture2D" uid="uid://dco8y18kf6guo" path="res://assets/art/kenney_cursor-pixel-pack/Tiles/tile_0189.png" id="1_rewps"]
+
+[node name="MoveTextureFill" type="TextureRect"]
+custom_minimum_size = Vector2(8, 8)
+texture = ExtResource("1_rewps")
+expand_mode = 1
+stretch_mode = 4

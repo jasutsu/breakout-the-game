@@ -1,7 +1,7 @@
 extends RigidBody2D
 class_name Ball
 
-const speed: float = 180.0
+const speed: float = 90.0
 var speed_multiplier_buff_big_ball = 1.0
 var speed_multiplier_buff_fast_ball = 1.0
 var speed_multiplier_moves = 1.0
@@ -10,7 +10,7 @@ const buff_speed_big_ball: float = 0.5
 const buff_speed_fast_ball: float = 1.5
 const speed_moves: float = 0.1
 
-const safety_impulse: float = 20.0
+const safety_impulse: float = 30.0
 const safety_direction_y: float = 0.09
 const easy_mode_angle_offset: float = 1.0
 
@@ -74,7 +74,7 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, lo
 		SoundManager.play_sfx(GlobalMappings.SfxType.BALL_HIT_BOUNDARY)
 
 func _on_last_hit_timer_timeout() -> void:
-	apply_impulse(Vector2.DOWN * safety_impulse)
+	apply_impulse(Vector2(1, 1) * safety_impulse)
 	$ImpulseTimer.start()
 
 func _on_impulse_timer_timeout() -> void:

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Paddle
 
-@export var default_input_speed := 6000
-@export var mouse_input_speed := 500
+@export var default_input_speed := 6800
+@export var mouse_input_speed := 700
 @export var mouse_input_threshold := 2.0
 
 var speed_multiplier: float = 1.0
@@ -32,9 +32,9 @@ func _input(event: InputEvent) -> void:
 	horizontal_velocity = 0
 	if event is InputEventKey:
 		var horizontal_dir = 0
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("move_right"):
 			horizontal_dir = 1
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("move_left"):
 			horizontal_dir = -1
 		horizontal_velocity = horizontal_dir * default_input_speed
 	elif event is InputEventMouseMotion:

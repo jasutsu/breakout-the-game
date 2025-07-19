@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ciyb5vw53ne4l"]
-
-[ext_resource type="Texture2D" uid="uid://c8rs8c6ecbvyv" path="res://assets/art/kenney_cursor-pixel-pack/Tiles/tile_0200.png" id="1_tlwah"]
-
-[node name="MoveTexture" type="TextureRect"]
-texture = ExtResource("1_tlwah")

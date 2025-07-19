@@ -6,6 +6,7 @@ var data: Dictionary[String, GlobalMappings.GamePauseType]
 func enter(prev_state: String = "", data: Dictionary = {}) -> void:
 	$InGameUi.visible = true
 	GameManager.set_time_scale_to_one()
+	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func exit() -> void:
