@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_a208i")
-name = "split_ball"
+type = 0
 texture = ExtResource("2_wqwpg")
-speed = 80.0
+speed = 70.0
 size = 1.0
 duration = 0.1
 metadata/_custom_type_script = "uid://ljgryamo5o4r"

@@ -7,7 +7,7 @@
 script = ExtResource("1_xlyb5")
 type = 1
 texture = ExtResource("2_wie10")
-speed = 120.0
+speed = 70.0
 size = 1.0
 duration = 5.0
 metadata/_custom_type_script = "uid://ljgryamo5o4r"
